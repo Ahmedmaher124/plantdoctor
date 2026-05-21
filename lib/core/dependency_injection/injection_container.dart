@@ -2,6 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../features/splash/presentation/cubit/splash_cubit.dart';
 import '../../features/onboarding/presentation/cubit/onboarding_cubit.dart';
+import '../../features/settings/presentation/cubit/settings_cubit.dart';
 
 final sl = GetIt.instance;
 
@@ -21,4 +22,9 @@ Future<void> init() async {
   // Features - Onboarding
   //---------------------------------------------------------
   sl.registerFactory(() => OnboardingCubit(sharedPreferences: sl()));
+
+  //---------------------------------------------------------
+  // Features - Settings
+  //---------------------------------------------------------
+  sl.registerLazySingleton(() => SettingsCubit(prefs: sl()));
 }

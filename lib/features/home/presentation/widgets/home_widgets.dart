@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/routes/route_constants.dart';
 
 class HomeHeader extends StatelessWidget {
   final String title;
@@ -28,14 +30,37 @@ class HomeHeader extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            title,
-            style: AppTextStyles.h1.copyWith(color: AppColors.white, fontSize: 24),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            subtitle,
-            style: AppTextStyles.subtitle.copyWith(color: AppColors.white.withOpacity(0.9), fontSize: 14),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: AppTextStyles.h1.copyWith(color: AppColors.white, fontSize: 24),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    subtitle,
+                    style: AppTextStyles.subtitle.copyWith(color: AppColors.white.withOpacity(0.9), fontSize: 14),
+                  ),
+                ],
+              ),
+              // Settings icon button
+              GestureDetector(
+                onTap: () => context.push(RouteConstants.settings),
+                child: Container(
+                  width: 42,
+                  height: 42,
+                  decoration: BoxDecoration(
+                    color: AppColors.white.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: const Icon(Icons.settings_rounded, color: AppColors.white, size: 22),
+                ),
+              ),
+            ],
           ),
           const SizedBox(height: 24),
           Container(

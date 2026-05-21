@@ -5,4 +5,5 @@ class RouteConstants {
   static const String camera = '/camera';
   static const String result = '/result';
   static const String chat = '/chat';
+  static const String settings = '/settings';
 }

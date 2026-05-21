@@ -1,0 +1,156 @@
+{
+  "@@locale": "en",
+
+  "appTitle": "Plant Doctor",
+  "@appTitle": { "description": "App name" },
+
+  "appSubtitle": "Let's take care of your plants 🌿",
+  "@appSubtitle": { "description": "Home header subtitle" },
+
+  "splashSubtitle": "AI-Powered Plant Care",
+  "@splashSubtitle": { "description": "Splash screen tagline" },
+
+  "searchPlaceholder": "Search for a plant...",
+  "@searchPlaceholder": { "description": "Search bar hint text" },
+
+  "categories": "Categories",
+  "@categories": { "description": "Home section label" },
+
+  "scanPlantNow": "Scan Plant Now",
+  "@scanPlantNow": { "description": "Scan card title" },
+
+  "scanPlantDesc": "Detect diseases instantly\nwith AI",
+  "@scanPlantDesc": { "description": "Scan card subtitle" },
+
+  "openCamera": "Open Camera",
+  "@openCamera": { "description": "Scan card button label" },
+
+  "featured": "Featured",
+  "@featured": { "description": "Home featured section label" },
+
+  "recentScans": "Recent Scans",
+  "@recentScans": { "description": "Home recent scans section label" },
+
+  "seeAll": "See all",
+  "@seeAll": { "description": "See all link text" },
+
+  "skip": "Skip",
+  "@skip": { "description": "Onboarding skip button" },
+
+  "next": "Next",
+  "@next": { "description": "Onboarding next button" },
+
+  "getStarted": "Get Started",
+  "@getStarted": { "description": "Onboarding final button" },
+
+  "onboarding1Title": "Detect Plant\nDiseases Easily",
+  "@onboarding1Title": { "description": "Onboarding page 1 title" },
+
+  "onboarding1Desc": "Use AI to identify plant problems\ninstantly",
+  "@onboarding1Desc": { "description": "Onboarding page 1 description" },
+
+  "onboarding2Title": "Scan with Your\nCamera",
+  "@onboarding2Title": { "description": "Onboarding page 2 title" },
+
+  "onboarding2Desc": "Take a photo and let AI analyze\nyour plant",
+  "@onboarding2Desc": { "description": "Onboarding page 2 description" },
+
+  "onboarding3Title": "Get Smart\nTreatment Advice",
+  "@onboarding3Title": { "description": "Onboarding page 3 title" },
+
+  "onboarding3Desc": "Receive detailed solutions\npowered by AI",
+  "@onboarding3Desc": { "description": "Onboarding page 3 description" },
+
+  "featCommonDiseases": "Common\nDiseases",
+  "@featCommonDiseases": { "description": "Featured card - common diseases" },
+
+  "featHealthyTips": "Healthy\nTips",
+  "@featHealthyTips": { "description": "Featured card - healthy tips" },
+
+  "plantTomato": "Tomato",
+  "@plantTomato": { "description": "Plant name: tomato" },
+
+  "plantPotato": "Potato",
+  "@plantPotato": { "description": "Plant name: potato" },
+
+  "plantCorn": "Corn",
+  "@plantCorn": { "description": "Plant name: corn" },
+
+  "plantPepper": "Pepper",
+  "@plantPepper": { "description": "Plant name: pepper" },
+
+  "catApple": "Apple",
+  "@catApple": { "description": "Category: apple" },
+
+  "catGrape": "Grape",
+  "@catGrape": { "description": "Category: grape" },
+
+  "catTomato": "Tomato",
+  "@catTomato": { "description": "Category: tomato" },
+
+  "catPotato": "Potato",
+  "@catPotato": { "description": "Category: potato" },
+
+  "catCorn": "Corn",
+  "@catCorn": { "description": "Category: corn" },
+
+  "catPepper": "Bell Pepper",
+  "@catPepper": { "description": "Category: bell pepper" },
+
+  "catCherry": "Cherry",
+  "@catCherry": { "description": "Category: cherry" },
+
+  "catStrawberry": "Strawberry",
+  "@catStrawberry": { "description": "Category: strawberry" },
+
+  "catPeach": "Peach",
+  "@catPeach": { "description": "Category: peach" },
+
+  "settingsTitle": "Settings",
+  "@settingsTitle": { "description": "Settings screen title" },
+
+  "settingsAppearance": "Appearance",
+  "@settingsAppearance": { "description": "Settings section: appearance" },
+
+  "settingsDarkMode": "Dark Mode",
+  "@settingsDarkMode": { "description": "Settings: dark mode label" },
+
+  "settingsDarkModeOn": "Enabled",
+  "@settingsDarkModeOn": { "description": "Dark mode status: on" },
+
+  "settingsDarkModeOff": "Disabled",
+  "@settingsDarkModeOff": { "description": "Dark mode status: off" },
+
+  "settingsLanguage": "Language",
+  "@settingsLanguage": { "description": "Settings section: language" },
+
+  "settingsLangArabic": "Arabic",
+  "@settingsLangArabic": { "description": "Language option label for Arabic" },
+
+  "settingsLangEnglish": "English",
+  "@settingsLangEnglish": { "description": "Language option label for English" },
+
+  "settingsAbout": "About",
+  "@settingsAbout": { "description": "Settings section: about" },
+
+  "settingsAppName": "Plant Doctor",
+  "@settingsAppName": { "description": "App name shown in about tile" },
+
+  "settingsVersion": "Version 1.0.0",
+  "@settingsVersion": { "description": "App version shown in about tile" },
+
+  "settingsTagline": "Made with 💚 for your plants",
+  "@settingsTagline": { "description": "Footer tagline in settings" },
+
+  "hoursAgo": "2 hours ago",
+  "@hoursAgo": { "description": "Recent scan time label" },
+
+  "yesterday": "Yesterday",
+  "@yesterday": { "description": "Recent scan time label" },
+
+  "threeDaysAgo": "3 days ago",
+  "@threeDaysAgo": { "description": "Recent scan time label" },
+
+  "fiveDaysAgo": "5 days ago",
+  "@fiveDaysAgo": { "description": "Recent scan time label" }
+}
