@@ -152,5 +152,35 @@
   "@threeDaysAgo": { "description": "Recent scan time label" },
 
   "fiveDaysAgo": "5 days ago",
-  "@fiveDaysAgo": { "description": "Recent scan time label" }
+  "@fiveDaysAgo": { "description": "Recent scan time label" },
+
+  "chatTitle": "Plant AI Assistant",
+  "@chatTitle": { "description": "Chat screen title" },
+
+  "chatSubtitle": "Ask about plant diseases, treatments & care",
+  "@chatSubtitle": { "description": "Chat screen subtitle" },
+
+  "chatInputHint": "Ask about your plant...",
+  "@chatInputHint": { "description": "Chat input field hint" },
+
+  "chatWelcome": "Hello! I'm PlantDoc 🌿\nAsk me about plant diseases, treatments, or any agricultural question.",
+  "@chatWelcome": { "description": "Welcome message shown when chat is empty" },
+
+  "chatErrorRetry": "Retry",
+  "@chatErrorRetry": { "description": "Retry button in chat error" },
+
+  "chatClearConversation": "Clear conversation",
+  "@chatClearConversation": { "description": "Clear chat button tooltip" },
+
+  "chatTyping": "PlantDoc is thinking...",
+  "@chatTyping": { "description": "AI typing indicator label" },
+
+  "chatSuggestion1": "Why are my tomato leaves turning yellow?",
+  "@chatSuggestion1": { "description": "Suggested question chip 1" },
+
+  "chatSuggestion2": "How to treat powdery mildew?",
+  "@chatSuggestion2": { "description": "Suggested question chip 2" },
+
+  "chatSuggestion3": "Best fertilizer for potatoes?",
+  "@chatSuggestion3": { "description": "Suggested question chip 3" }
 }

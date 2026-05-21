@@ -160,4 +160,35 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get fiveDaysAgo => '5 days ago';
+
+  @override
+  String get chatTitle => 'Plant AI Assistant';
+
+  @override
+  String get chatSubtitle => 'Ask about plant diseases, treatments & care';
+
+  @override
+  String get chatInputHint => 'Ask about your plant...';
+
+  @override
+  String get chatWelcome =>
+      'Hello! I\'m PlantDoc 🌿\nAsk me about plant diseases, treatments, or any agricultural question.';
+
+  @override
+  String get chatErrorRetry => 'Retry';
+
+  @override
+  String get chatClearConversation => 'Clear conversation';
+
+  @override
+  String get chatTyping => 'PlantDoc is thinking...';
+
+  @override
+  String get chatSuggestion1 => 'Why are my tomato leaves turning yellow?';
+
+  @override
+  String get chatSuggestion2 => 'How to treat powdery mildew?';
+
+  @override
+  String get chatSuggestion3 => 'Best fertilizer for potatoes?';
 }

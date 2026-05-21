@@ -51,5 +51,15 @@
   "hoursAgo": "منذ ساعتين",
   "yesterday": "أمس",
   "threeDaysAgo": "منذ 3 أيام",
-  "fiveDaysAgo": "منذ 5 أيام"
+  "fiveDaysAgo": "منذ 5 أيام",
+  "chatTitle": "مساعد النبات الذكي",
+  "chatSubtitle": "اسأل عن أمراض النباتات والعلاجات والرعاية",
+  "chatInputHint": "اسأل عن نباتك...",
+  "chatWelcome": "مرحباً! أنا PlantDoc 🌿\nاسألني عن أمراض النباتات والعلاجات أو أي سؤال زراعي.",
+  "chatErrorRetry": "إعادة المحاولة",
+  "chatClearConversation": "مسح المحادثة",
+  "chatTyping": "PlantDoc يفكر...",
+  "chatSuggestion1": "لماذا تصفر أوراق الطماطم؟",
+  "chatSuggestion2": "كيف أعالج البياض الدقيقي؟",
+  "chatSuggestion3": "أفضل سماد للبطاطس؟"
 }

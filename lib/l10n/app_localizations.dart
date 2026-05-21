@@ -403,6 +403,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'5 days ago'**
   String get fiveDaysAgo;
+
+  /// Chat screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Plant AI Assistant'**
+  String get chatTitle;
+
+  /// Chat screen subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Ask about plant diseases, treatments & care'**
+  String get chatSubtitle;
+
+  /// Chat input field hint
+  ///
+  /// In en, this message translates to:
+  /// **'Ask about your plant...'**
+  String get chatInputHint;
+
+  /// Welcome message shown when chat is empty
+  ///
+  /// In en, this message translates to:
+  /// **'Hello! I\'m PlantDoc 🌿\nAsk me about plant diseases, treatments, or any agricultural question.'**
+  String get chatWelcome;
+
+  /// Retry button in chat error
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get chatErrorRetry;
+
+  /// Clear chat button tooltip
+  ///
+  /// In en, this message translates to:
+  /// **'Clear conversation'**
+  String get chatClearConversation;
+
+  /// AI typing indicator label
+  ///
+  /// In en, this message translates to:
+  /// **'PlantDoc is thinking...'**
+  String get chatTyping;
+
+  /// Suggested question chip 1
+  ///
+  /// In en, this message translates to:
+  /// **'Why are my tomato leaves turning yellow?'**
+  String get chatSuggestion1;
+
+  /// Suggested question chip 2
+  ///
+  /// In en, this message translates to:
+  /// **'How to treat powdery mildew?'**
+  String get chatSuggestion2;
+
+  /// Suggested question chip 3
+  ///
+  /// In en, this message translates to:
+  /// **'Best fertilizer for potatoes?'**
+  String get chatSuggestion3;
 }
 
 class _AppLocalizationsDelegate

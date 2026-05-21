@@ -30,7 +30,8 @@ class HomeScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () => context.push(RouteConstants.chat),
         backgroundColor: AppColors.primary,
-        child: const Icon(Icons.add, color: AppColors.white, size: 28),
+        tooltip: 'Plant AI Chat',
+        child: const Icon(Icons.chat_rounded, color: AppColors.white, size: 26),
       ),
       body: SingleChildScrollView(
         child: Column(

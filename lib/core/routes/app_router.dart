@@ -7,6 +7,8 @@ import '../../features/onboarding/presentation/pages/onboarding_screen.dart';
 import '../../features/home/presentation/pages/home_screen.dart';
 import '../../features/settings/presentation/pages/settings_screen.dart';
 import '../../features/settings/presentation/cubit/settings_cubit.dart';
+import '../../features/gemini_chat/presentation/pages/chat_screen.dart';
+import '../../features/gemini_chat/presentation/cubit/chat_cubit.dart';
 import '../dependency_injection/injection_container.dart' as di;
 
 final GoRouter appRouter = GoRouter(
@@ -26,15 +28,20 @@ final GoRouter appRouter = GoRouter(
     ),
     GoRoute(
       path: RouteConstants.camera,
-      builder: (context, state) => const Scaffold(body: Center(child: Text('Camera Screen'))),
+      builder: (context, state) =>
+          const Scaffold(body: Center(child: Text('Camera Screen'))),
     ),
     GoRoute(
       path: RouteConstants.result,
-      builder: (context, state) => const Scaffold(body: Center(child: Text('Result Screen'))),
+      builder: (context, state) =>
+          const Scaffold(body: Center(child: Text('Result Screen'))),
     ),
     GoRoute(
       path: RouteConstants.chat,
-      builder: (context, state) => const Scaffold(body: Center(child: Text('Chat Screen'))),
+      builder: (context, state) => BlocProvider(
+        create: (_) => di.sl<ChatCubit>(),
+        child: const ChatScreen(),
+      ),
     ),
     GoRoute(
       path: RouteConstants.settings,

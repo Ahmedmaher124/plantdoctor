@@ -161,4 +161,35 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get fiveDaysAgo => 'منذ 5 أيام';
+
+  @override
+  String get chatTitle => 'مساعد النبات الذكي';
+
+  @override
+  String get chatSubtitle => 'اسأل عن أمراض النباتات والعلاجات والرعاية';
+
+  @override
+  String get chatInputHint => 'اسأل عن نباتك...';
+
+  @override
+  String get chatWelcome =>
+      'مرحباً! أنا PlantDoc 🌿\nاسألني عن أمراض النباتات والعلاجات أو أي سؤال زراعي.';
+
+  @override
+  String get chatErrorRetry => 'إعادة المحاولة';
+
+  @override
+  String get chatClearConversation => 'مسح المحادثة';
+
+  @override
+  String get chatTyping => 'PlantDoc يفكر...';
+
+  @override
+  String get chatSuggestion1 => 'لماذا تصفر أوراق الطماطم؟';
+
+  @override
+  String get chatSuggestion2 => 'كيف أعالج البياض الدقيقي؟';
+
+  @override
+  String get chatSuggestion3 => 'أفضل سماد للبطاطس؟';
 }
