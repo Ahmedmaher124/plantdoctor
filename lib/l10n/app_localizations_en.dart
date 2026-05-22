@@ -191,4 +191,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get chatSuggestion3 => 'Best fertilizer for potatoes?';
+
+  @override
+  String get commonDiseases => 'Common Diseases';
+
+  @override
+  String get seeAllDiseases => 'See All';
 }

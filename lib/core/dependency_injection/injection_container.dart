@@ -9,6 +9,11 @@ import '../../features/gemini_chat/data/repositories/chat_repository_impl.dart';
 import '../../features/gemini_chat/domain/repositories/chat_repository.dart';
 import '../../features/gemini_chat/domain/usecases/send_message_usecase.dart';
 import '../../features/gemini_chat/presentation/cubit/chat_cubit.dart';
+import '../../features/disease_detection/data/datasource/disease_remote_datasource.dart';
+import '../../features/disease_detection/data/repositories/disease_repository_impl.dart';
+import '../../features/disease_detection/domain/repositories/disease_repository.dart';
+import '../../features/disease_detection/domain/usecases/get_diseases_usecase.dart';
+import '../../features/disease_detection/presentation/cubit/disease_cubit.dart';
 import '../constants/api_keys.dart';
 import '../network/gemini_dio_client.dart';
 
@@ -64,5 +69,32 @@ Future<void> init() async {
   // Cubit — factory so each chat screen gets a fresh instance
   sl.registerFactory(
     () => ChatCubit(sendMessageUseCase: sl<SendMessageUseCase>()),
+  );
+
+  //---------------------------------------------------------
+  // Features - Disease Detection
+  //---------------------------------------------------------
+
+  // Data source — uses a plain Dio (not the Gemini one)
+  sl.registerLazySingleton<DiseaseRemoteDataSource>(
+    () => DiseaseRemoteDataSourceImpl(
+      dio: sl<Dio>(),
+      apiKey: ApiKeys.perenual,
+    ),
+  );
+
+  // Repository
+  sl.registerLazySingleton<DiseaseRepository>(
+    () => DiseaseRepositoryImpl(sl<DiseaseRemoteDataSource>()),
+  );
+
+  // Use case
+  sl.registerLazySingleton(
+    () => GetDiseasesUseCase(sl<DiseaseRepository>()),
+  );
+
+  // Cubit — singleton so the disease list is cached across navigation
+  sl.registerLazySingleton(
+    () => DiseaseCubit(getDiseasesUseCase: sl<GetDiseasesUseCase>()),
   );
 }

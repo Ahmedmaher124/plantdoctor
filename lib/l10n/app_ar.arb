@@ -61,5 +61,7 @@
   "chatTyping": "PlantDoc يفكر...",
   "chatSuggestion1": "لماذا تصفر أوراق الطماطم؟",
   "chatSuggestion2": "كيف أعالج البياض الدقيقي؟",
-  "chatSuggestion3": "أفضل سماد للبطاطس؟"
+  "chatSuggestion3": "أفضل سماد للبطاطس؟",
+  "commonDiseases": "الأمراض الشائعة",
+  "seeAllDiseases": "عرض الكل"
 }

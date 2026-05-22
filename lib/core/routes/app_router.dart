@@ -9,6 +9,8 @@ import '../../features/settings/presentation/pages/settings_screen.dart';
 import '../../features/settings/presentation/cubit/settings_cubit.dart';
 import '../../features/gemini_chat/presentation/pages/chat_screen.dart';
 import '../../features/gemini_chat/presentation/cubit/chat_cubit.dart';
+import '../../features/disease_detection/presentation/pages/disease_list_screen.dart';
+import '../../features/disease_detection/presentation/cubit/disease_cubit.dart';
 import '../dependency_injection/injection_container.dart' as di;
 
 final GoRouter appRouter = GoRouter(
@@ -48,6 +50,13 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) => BlocProvider.value(
         value: di.sl<SettingsCubit>(),
         child: const SettingsScreen(),
+      ),
+    ),
+    GoRoute(
+      path: RouteConstants.diseases,
+      builder: (context, state) => BlocProvider.value(
+        value: di.sl<DiseaseCubit>(),
+        child: const DiseaseListScreen(),
       ),
     ),
   ],

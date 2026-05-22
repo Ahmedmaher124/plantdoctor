@@ -463,6 +463,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Best fertilizer for potatoes?'**
   String get chatSuggestion3;
+
+  /// Section title for plant diseases list
+  ///
+  /// In en, this message translates to:
+  /// **'Common Diseases'**
+  String get commonDiseases;
+
+  /// See all diseases button
+  ///
+  /// In en, this message translates to:
+  /// **'See All'**
+  String get seeAllDiseases;
 }
 
 class _AppLocalizationsDelegate

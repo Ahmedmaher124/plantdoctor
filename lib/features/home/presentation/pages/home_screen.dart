@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Header Section
+            // ── Header ─────────────────────────────────────────────
             HomeHeader(
               title: l10n.appTitle,
               subtitle: l10n.appSubtitle,
@@ -49,24 +49,25 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Categories Title
+                  // ── Categories ──────────────────────────────────
                   Text(
                     l10n.categories,
                     style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: AppTextStyles.fontFamily),
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: AppTextStyles.fontFamily,
+                    ),
                   ),
                   const SizedBox(height: 16),
 
-                  // Categories Horizontally Scrollable List
                   SizedBox(
                     height: 100,
                     child: ListView.separated(
                       scrollDirection: Axis.horizontal,
                       itemCount: categories.length,
                       clipBehavior: Clip.none,
-                      separatorBuilder: (_, __) => const SizedBox(width: 16),
+                      separatorBuilder: (_, __) =>
+                          const SizedBox(width: 16),
                       itemBuilder: (context, index) {
                         final cat = categories[index];
                         return CategoryItem(
@@ -85,7 +86,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 32),
 
-                  // Scan Card
+                  // ── Scan Card ───────────────────────────────────
                   ScanCard(
                     title: l10n.scanPlantNow,
                     subtitle: l10n.scanPlantDesc,
@@ -94,25 +95,33 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 32),
 
-                  // Featured Title
+                  // ── Featured ────────────────────────────────────
                   Text(
                     l10n.featured,
                     style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: AppTextStyles.fontFamily),
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: AppTextStyles.fontFamily,
+                    ),
                   ),
                   const SizedBox(height: 16),
 
-                  // Featured Cards Row
+                  // The red "Common Diseases" card is the visual entry
+                  // point for the disease list — tap to navigate to
+                  // the full /diseases screen. All disease logic,
+                  // cubit, API and state remain completely unchanged.
                   Row(
                     children: [
                       Expanded(
-                        child: FeaturedCard(
-                          title: l10n.featCommonDiseases,
-                          icon: Icons.trending_up,
-                          bgColor: AppColors.surfacePink,
-                          iconColor: AppColors.iconPink,
+                        child: GestureDetector(
+                          onTap: () =>
+                              context.push(RouteConstants.diseases),
+                          child: FeaturedCard(
+                            title: l10n.featCommonDiseases,
+                            icon: Icons.trending_up,
+                            bgColor: AppColors.surfacePink,
+                            iconColor: AppColors.iconPink,
+                          ),
                         ),
                       ),
                       const SizedBox(width: 16),
@@ -128,16 +137,17 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 32),
 
-                  // Recent Scans Title & See All
+                  // ── Recent Scans ────────────────────────────────
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         l10n.recentScans,
                         style: const TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: AppTextStyles.fontFamily),
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: AppTextStyles.fontFamily,
+                        ),
                       ),
                       TextButton(
                         onPressed: () {},
@@ -154,7 +164,6 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
 
-                  // Recent Scans
                   RecentScanItem(
                     plantName: l10n.plantTomato,
                     diseaseName: 'Blight',

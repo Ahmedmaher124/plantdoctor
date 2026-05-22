@@ -8,5 +8,9 @@
 class ApiKeys {
   ApiKeys._();
 
-  static const String gemini = 'AIzaSyDoqK5vOUJ7frTGiFXhAEmbq2OXH0AQ61o';
+  /// Gemini API key — get yours at https://aistudio.google.com/app/apikey
+  static const String gemini = 'YOUR_GEMINI_API_KEY_HERE';
+
+  /// Perenual plant disease API key — used for pest-disease-list endpoint
+  static const String perenual = 'sk-CDxE6a0ff8c67673817496';
 }

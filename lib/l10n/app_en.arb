@@ -182,5 +182,11 @@
   "@chatSuggestion2": { "description": "Suggested question chip 2" },
 
   "chatSuggestion3": "Best fertilizer for potatoes?",
-  "@chatSuggestion3": { "description": "Suggested question chip 3" }
+  "@chatSuggestion3": { "description": "Suggested question chip 3" },
+
+  "commonDiseases": "Common Diseases",
+  "@commonDiseases": { "description": "Section title for plant diseases list" },
+
+  "seeAllDiseases": "See All",
+  "@seeAllDiseases": { "description": "See all diseases button" }
 }

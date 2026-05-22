@@ -6,4 +6,5 @@ class RouteConstants {
   static const String result = '/result';
   static const String chat = '/chat';
   static const String settings = '/settings';
+  static const String diseases = '/diseases';
 }

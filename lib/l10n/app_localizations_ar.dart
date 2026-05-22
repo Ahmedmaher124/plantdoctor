@@ -192,4 +192,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get chatSuggestion3 => 'أفضل سماد للبطاطس؟';
+
+  @override
+  String get commonDiseases => 'الأمراض الشائعة';
+
+  @override
+  String get seeAllDiseases => 'عرض الكل';
 }
