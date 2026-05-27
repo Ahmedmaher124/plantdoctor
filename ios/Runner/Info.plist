@@ -66,5 +66,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>We need camera access to scan your plant.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need photo access to select plant images.</string>
 </dict>
 </plist>

@@ -7,6 +7,9 @@ import '../../features/onboarding/presentation/pages/onboarding_screen.dart';
 import '../../features/home/presentation/pages/home_screen.dart';
 import '../../features/settings/presentation/pages/settings_screen.dart';
 import '../../features/settings/presentation/cubit/settings_cubit.dart';
+import '../../features/disease_prediction/presentation/pages/disease_prediction_screen.dart';
+import '../../features/disease_prediction/presentation/pages/disease_result_screen.dart';
+import '../../features/disease_prediction/data/models/disease_prediction_response.dart';
 import '../dependency_injection/injection_container.dart' as di;
 
 final GoRouter appRouter = GoRouter(
@@ -26,11 +29,23 @@ final GoRouter appRouter = GoRouter(
     ),
     GoRoute(
       path: RouteConstants.camera,
-      builder: (context, state) => const Scaffold(body: Center(child: Text('Camera Screen'))),
+      builder: (context, state) => const DiseasePredictionScreen(),
     ),
     GoRoute(
       path: RouteConstants.result,
-      builder: (context, state) => const Scaffold(body: Center(child: Text('Result Screen'))),
+      builder: (context, state) {
+        final response = state.extra;
+        if (response is DiseaseResultArgs) {
+          return DiseaseResultScreen(
+            response: response.response,
+            imagePath: response.imagePath,
+          );
+        }
+        if (response is DiseasePredictionResponse) {
+          return DiseaseResultScreen(response: response);
+        }
+        return const Scaffold(body: Center(child: Text('Result Screen')));
+      },
     ),
     GoRoute(
       path: RouteConstants.chat,

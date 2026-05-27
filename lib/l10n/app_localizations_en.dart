@@ -160,4 +160,95 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get fiveDaysAgo => '5 days ago';
+
+  @override
+  String get cameraTitle => 'Disease Prediction';
+
+  @override
+  String get cameraCapture => 'Capture Image';
+
+  @override
+  String get cameraRetake => 'Retake Image';
+
+  @override
+  String get cameraGallery => 'Choose from Gallery';
+
+  @override
+  String get cameraPredicting => 'Predicting disease...';
+
+  @override
+  String get cameraPredictionResult => 'Prediction Result';
+
+  @override
+  String get cameraPredictionLabel => 'Prediction';
+
+  @override
+  String get cameraPredictionConfidence => 'Confidence';
+
+  @override
+  String get cameraViewImage => 'View Image';
+
+  @override
+  String get cameraRetryDiagnosis => 'Diagnose Again';
+
+  @override
+  String get cameraBackHome => 'Back to Home';
+
+  @override
+  String get cameraConfidenceVeryHigh => 'Very high confidence';
+
+  @override
+  String get cameraConfidenceHigh => 'High confidence';
+
+  @override
+  String get cameraConfidenceMedium => 'Medium confidence';
+
+  @override
+  String get cameraConfidenceLow => 'Low confidence';
+
+  @override
+  String get cameraConfidenceUnknown => 'Confidence unavailable';
+
+  @override
+  String get cameraPredictionUnknown => 'Unknown disease';
+
+  @override
+  String get cameraNoImage => 'No image captured yet';
+
+  @override
+  String get cameraTryAgain => 'Try Again';
+
+  @override
+  String get cameraSourceTitle => 'Select Image Source';
+
+  @override
+  String get cameraSourceTakePhoto => 'Take Photo (Camera)';
+
+  @override
+  String get cameraSourceGallery => 'Choose from Gallery';
+
+  @override
+  String get errorNoInternet =>
+      'No internet connection. Please check your network.';
+
+  @override
+  String get errorTimeout => 'Request timed out. Please try again.';
+
+  @override
+  String get errorServer => 'Server error. Please try again later.';
+
+  @override
+  String get errorInvalidResponse => 'Unexpected response from server.';
+
+  @override
+  String get errorCameraPermissionDenied => 'Camera permission denied.';
+
+  @override
+  String get errorGalleryPermissionDenied => 'Gallery permission denied.';
+
+  @override
+  String get errorCameraCancelled => 'Image selection was cancelled.';
+
+  @override
+  String get errorUnexpected => 'Something went wrong. Please try again.';
 }

@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:plantdoctor/l10n/app_localizations.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:go_router/go_router.dart';
+import '../../../../core/dependency_injection/injection_container.dart' as di;
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/routes/route_constants.dart';
+import '../../../disease_prediction/presentation/cubit/disease_prediction_cubit.dart';
+import '../../../disease_prediction/presentation/cubit/disease_prediction_state.dart';
+import '../../../disease_prediction/presentation/pages/disease_result_screen.dart';
 import '../widgets/home_widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -89,7 +94,7 @@ class HomeScreen extends StatelessWidget {
                     title: l10n.scanPlantNow,
                     subtitle: l10n.scanPlantDesc,
                     buttonText: l10n.openCamera,
-                    onScanTap: () => context.push(RouteConstants.camera),
+                    onScanTap: () => _showImageSourceSheet(context),
                   ),
                   const SizedBox(height: 32),
 
@@ -192,6 +197,146 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _showImageSourceSheet(BuildContext context) async {
+    final l10n = AppLocalizations.of(context)!;
+
+    final source = await showModalBottomSheet<ImageSource>(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (sheetContext) {
+        return SafeArea(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Text(
+                  l10n.cameraSourceTitle,
+                  style: AppTextStyles.h1.copyWith(fontSize: 16),
+                ),
+              ),
+              ListTile(
+                leading: const Icon(Icons.camera_alt_rounded),
+                title: Text(l10n.cameraSourceTakePhoto),
+                onTap: () => Navigator.of(sheetContext).pop(ImageSource.camera),
+              ),
+              ListTile(
+                leading: const Icon(Icons.photo_library_rounded),
+                title: Text(l10n.cameraSourceGallery),
+                onTap: () => Navigator.of(sheetContext).pop(ImageSource.gallery),
+              ),
+              const SizedBox(height: 8),
+            ],
+          ),
+        );
+      },
+    );
+
+    if (source == null) {
+      return;
+    }
+
+    await _startPredictionFlow(context, source);
+  }
+
+  Future<void> _startPredictionFlow(BuildContext context, ImageSource source) async {
+    final l10n = AppLocalizations.of(context)!;
+    final cubit = di.sl<DiseasePredictionCubit>();
+
+    final imageFile = await cubit.pickImage(source);
+    if (imageFile == null) {
+      _showFailure(context, cubit.state, l10n);
+      await cubit.close();
+      return;
+    }
+
+    _showLoadingDialog(context, l10n.cameraPredicting);
+    final response = await cubit.predictWithImage(imageFile);
+    Navigator.of(context, rootNavigator: true).pop();
+
+    if (response != null) {
+      await cubit.close();
+      if (context.mounted) {
+        context.push(
+          RouteConstants.result,
+          extra: DiseaseResultArgs(
+            response: response,
+            imagePath: imageFile.path,
+          ),
+        );
+      }
+      return;
+    }
+
+    _showFailure(context, cubit.state, l10n);
+    await cubit.close();
+  }
+
+  void _showLoadingDialog(BuildContext context, String message) {
+    showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (dialogContext) {
+        return AlertDialog(
+          content: Row(
+            children: [
+              const SizedBox(
+                width: 20,
+                height: 20,
+                child: CircularProgressIndicator(strokeWidth: 2),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Text(
+                  message,
+                  style: AppTextStyles.subtitle.copyWith(fontSize: 14),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  void _showFailure(
+    BuildContext context,
+    DiseasePredictionState state,
+    AppLocalizations l10n,
+  ) {
+    if (state is! DiseasePredictionFailure) {
+      return;
+    }
+
+    final message = _errorMessage(l10n, state.errorType);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(message)),
+    );
+  }
+
+  String _errorMessage(AppLocalizations l10n, DiseasePredictionErrorType type) {
+    switch (type) {
+      case DiseasePredictionErrorType.noInternet:
+        return l10n.errorNoInternet;
+      case DiseasePredictionErrorType.timeout:
+        return l10n.errorTimeout;
+      case DiseasePredictionErrorType.server:
+        return l10n.errorServer;
+      case DiseasePredictionErrorType.invalidResponse:
+        return l10n.errorInvalidResponse;
+      case DiseasePredictionErrorType.cameraPermissionDenied:
+        return l10n.errorCameraPermissionDenied;
+      case DiseasePredictionErrorType.galleryPermissionDenied:
+        return l10n.errorGalleryPermissionDenied;
+      case DiseasePredictionErrorType.cameraCancelled:
+        return l10n.errorCameraCancelled;
+      case DiseasePredictionErrorType.unknown:
+        return l10n.errorUnexpected;
+    }
   }
 }
 
