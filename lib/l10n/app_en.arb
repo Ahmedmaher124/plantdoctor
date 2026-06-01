@@ -189,4 +189,93 @@
 
   "seeAllDiseases": "See All",
   "@seeAllDiseases": { "description": "See all diseases button" }
+  "cameraTitle": "Disease Prediction",
+  "@cameraTitle": { "description": "Camera screen title" },
+
+  "cameraCapture": "Capture Image",
+  "@cameraCapture": { "description": "Capture image button label" },
+
+  "cameraRetake": "Retake Image",
+  "@cameraRetake": { "description": "Retake image button label" },
+
+  "cameraGallery": "Choose from Gallery",
+  "@cameraGallery": { "description": "Pick image from gallery button label" },
+
+  "cameraPredicting": "Predicting disease...",
+  "@cameraPredicting": { "description": "Loading text during prediction" },
+
+  "cameraPredictionResult": "Prediction Result",
+  "@cameraPredictionResult": { "description": "Prediction result card title" },
+
+  "cameraPredictionLabel": "Prediction",
+  "@cameraPredictionLabel": { "description": "Prediction label" },
+
+  "cameraPredictionConfidence": "Confidence",
+  "@cameraPredictionConfidence": { "description": "Prediction confidence label" },
+
+  "cameraViewImage": "View Image",
+  "@cameraViewImage": { "description": "View image button label" },
+
+  "cameraRetryDiagnosis": "Diagnose Again",
+  "@cameraRetryDiagnosis": { "description": "Retry diagnosis button label" },
+
+  "cameraBackHome": "Back to Home",
+  "@cameraBackHome": { "description": "Back to home button label" },
+
+  "cameraConfidenceVeryHigh": "Very high confidence",
+  "@cameraConfidenceVeryHigh": { "description": "Confidence level label (very high)" },
+
+  "cameraConfidenceHigh": "High confidence",
+  "@cameraConfidenceHigh": { "description": "Confidence level label (high)" },
+
+  "cameraConfidenceMedium": "Medium confidence",
+  "@cameraConfidenceMedium": { "description": "Confidence level label (medium)" },
+
+  "cameraConfidenceLow": "Low confidence",
+  "@cameraConfidenceLow": { "description": "Confidence level label (low)" },
+
+  "cameraConfidenceUnknown": "Confidence unavailable",
+  "@cameraConfidenceUnknown": { "description": "Confidence label when value is missing" },
+
+  "cameraPredictionUnknown": "Unknown disease",
+  "@cameraPredictionUnknown": { "description": "Fallback text when no prediction is available" },
+
+  "cameraNoImage": "No image captured yet",
+  "@cameraNoImage": { "description": "Placeholder when no image is selected" },
+
+  "cameraTryAgain": "Try Again",
+  "@cameraTryAgain": { "description": "Retry prediction button label" },
+
+  "cameraSourceTitle": "Select Image Source",
+  "@cameraSourceTitle": { "description": "Bottom sheet title for image source" },
+
+  "cameraSourceTakePhoto": "Take Photo (Camera)",
+  "@cameraSourceTakePhoto": { "description": "Bottom sheet camera option" },
+
+  "cameraSourceGallery": "Choose from Gallery",
+  "@cameraSourceGallery": { "description": "Bottom sheet gallery option" },
+
+  "errorNoInternet": "No internet connection. Please check your network.",
+  "@errorNoInternet": { "description": "Error shown when there is no network" },
+
+  "errorTimeout": "Request timed out. Please try again.",
+  "@errorTimeout": { "description": "Error shown on timeout" },
+
+  "errorServer": "Server error. Please try again later.",
+  "@errorServer": { "description": "Error shown on server failures" },
+
+  "errorInvalidResponse": "Unexpected response from server.",
+  "@errorInvalidResponse": { "description": "Error shown on invalid response format" },
+
+  "errorCameraPermissionDenied": "Camera permission denied.",
+  "@errorCameraPermissionDenied": { "description": "Error when camera permission denied" },
+
+  "errorGalleryPermissionDenied": "Gallery permission denied.",
+  "@errorGalleryPermissionDenied": { "description": "Error when gallery permission denied" },
+
+  "errorCameraCancelled": "Image selection was cancelled.",
+  "@errorCameraCancelled": { "description": "Error shown when user cancels image selection" },
+
+  "errorUnexpected": "Something went wrong. Please try again.",
+  "@errorUnexpected": { "description": "Fallback error message" }
 }

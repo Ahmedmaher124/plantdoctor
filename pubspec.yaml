@@ -25,6 +25,8 @@ dependencies:
   # Utilities
   equatable: ^2.0.5
   shared_preferences: ^2.2.2
+  dio: ^5.7.0
+  image_picker: ^1.1.2
 
   # Networking
   dio: ^5.4.0

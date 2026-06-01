@@ -475,6 +475,185 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'See All'**
   String get seeAllDiseases;
+  /// Camera screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Disease Prediction'**
+  String get cameraTitle;
+
+  /// Capture image button label
+  ///
+  /// In en, this message translates to:
+  /// **'Capture Image'**
+  String get cameraCapture;
+
+  /// Retake image button label
+  ///
+  /// In en, this message translates to:
+  /// **'Retake Image'**
+  String get cameraRetake;
+
+  /// Pick image from gallery button label
+  ///
+  /// In en, this message translates to:
+  /// **'Choose from Gallery'**
+  String get cameraGallery;
+
+  /// Loading text during prediction
+  ///
+  /// In en, this message translates to:
+  /// **'Predicting disease...'**
+  String get cameraPredicting;
+
+  /// Prediction result card title
+  ///
+  /// In en, this message translates to:
+  /// **'Prediction Result'**
+  String get cameraPredictionResult;
+
+  /// Prediction label
+  ///
+  /// In en, this message translates to:
+  /// **'Prediction'**
+  String get cameraPredictionLabel;
+
+  /// Prediction confidence label
+  ///
+  /// In en, this message translates to:
+  /// **'Confidence'**
+  String get cameraPredictionConfidence;
+
+  /// View image button label
+  ///
+  /// In en, this message translates to:
+  /// **'View Image'**
+  String get cameraViewImage;
+
+  /// Retry diagnosis button label
+  ///
+  /// In en, this message translates to:
+  /// **'Diagnose Again'**
+  String get cameraRetryDiagnosis;
+
+  /// Back to home button label
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Home'**
+  String get cameraBackHome;
+
+  /// Confidence level label (very high)
+  ///
+  /// In en, this message translates to:
+  /// **'Very high confidence'**
+  String get cameraConfidenceVeryHigh;
+
+  /// Confidence level label (high)
+  ///
+  /// In en, this message translates to:
+  /// **'High confidence'**
+  String get cameraConfidenceHigh;
+
+  /// Confidence level label (medium)
+  ///
+  /// In en, this message translates to:
+  /// **'Medium confidence'**
+  String get cameraConfidenceMedium;
+
+  /// Confidence level label (low)
+  ///
+  /// In en, this message translates to:
+  /// **'Low confidence'**
+  String get cameraConfidenceLow;
+
+  /// Confidence label when value is missing
+  ///
+  /// In en, this message translates to:
+  /// **'Confidence unavailable'**
+  String get cameraConfidenceUnknown;
+
+  /// Fallback text when no prediction is available
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown disease'**
+  String get cameraPredictionUnknown;
+
+  /// Placeholder when no image is selected
+  ///
+  /// In en, this message translates to:
+  /// **'No image captured yet'**
+  String get cameraNoImage;
+
+  /// Retry prediction button label
+  ///
+  /// In en, this message translates to:
+  /// **'Try Again'**
+  String get cameraTryAgain;
+
+  /// Bottom sheet title for image source
+  ///
+  /// In en, this message translates to:
+  /// **'Select Image Source'**
+  String get cameraSourceTitle;
+
+  /// Bottom sheet camera option
+  ///
+  /// In en, this message translates to:
+  /// **'Take Photo (Camera)'**
+  String get cameraSourceTakePhoto;
+
+  /// Bottom sheet gallery option
+  ///
+  /// In en, this message translates to:
+  /// **'Choose from Gallery'**
+  String get cameraSourceGallery;
+
+  /// Error shown when there is no network
+  ///
+  /// In en, this message translates to:
+  /// **'No internet connection. Please check your network.'**
+  String get errorNoInternet;
+
+  /// Error shown on timeout
+  ///
+  /// In en, this message translates to:
+  /// **'Request timed out. Please try again.'**
+  String get errorTimeout;
+
+  /// Error shown on server failures
+  ///
+  /// In en, this message translates to:
+  /// **'Server error. Please try again later.'**
+  String get errorServer;
+
+  /// Error shown on invalid response format
+  ///
+  /// In en, this message translates to:
+  /// **'Unexpected response from server.'**
+  String get errorInvalidResponse;
+
+  /// Error when camera permission denied
+  ///
+  /// In en, this message translates to:
+  /// **'Camera permission denied.'**
+  String get errorCameraPermissionDenied;
+
+  /// Error when gallery permission denied
+  ///
+  /// In en, this message translates to:
+  /// **'Gallery permission denied.'**
+  String get errorGalleryPermissionDenied;
+
+  /// Error shown when user cancels image selection
+  ///
+  /// In en, this message translates to:
+  /// **'Image selection was cancelled.'**
+  String get errorCameraCancelled;
+
+  /// Fallback error message
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Please try again.'**
+  String get errorUnexpected;
 }
 
 class _AppLocalizationsDelegate

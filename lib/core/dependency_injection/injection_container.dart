@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:dio/dio.dart';
 import '../../features/splash/presentation/cubit/splash_cubit.dart';
@@ -16,6 +17,9 @@ import '../../features/disease_detection/domain/usecases/get_diseases_usecase.da
 import '../../features/disease_detection/presentation/cubit/disease_cubit.dart';
 import '../constants/api_keys.dart';
 import '../network/gemini_dio_client.dart';
+import '../network/api_client.dart';
+import '../../features/disease_prediction/data/repositories/disease_prediction_repository.dart';
+import '../../features/disease_prediction/presentation/cubit/disease_prediction_cubit.dart';
 
 final sl = GetIt.instance;
 
@@ -25,6 +29,12 @@ Future<void> init() async {
   //---------------------------------------------------------
   final sharedPreferences = await SharedPreferences.getInstance();
   sl.registerLazySingleton(() => sharedPreferences);
+  sl.registerLazySingleton(() => Dio());
+
+  //---------------------------------------------------------
+  // Core
+  //---------------------------------------------------------
+  sl.registerLazySingleton(() => ApiClient(dio: sl()));
 
   // Dio — Gemini API client
   sl.registerLazySingleton<Dio>(() => GeminiDioClient.instance);
@@ -97,4 +107,8 @@ Future<void> init() async {
   sl.registerLazySingleton(
     () => DiseaseCubit(getDiseasesUseCase: sl<GetDiseasesUseCase>()),
   );
+  // Features - Disease Prediction
+  //---------------------------------------------------------
+  sl.registerLazySingleton(() => DiseasePredictionRepository(apiClient: sl()));
+  sl.registerFactory(() => DiseasePredictionCubit(repository: sl()));
 }

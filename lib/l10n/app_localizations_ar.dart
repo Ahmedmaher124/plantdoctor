@@ -198,4 +198,93 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get seeAllDiseases => 'عرض الكل';
+  String get cameraTitle => 'تشخيص المرض';
+
+  @override
+  String get cameraCapture => 'التقاط صورة';
+
+  @override
+  String get cameraRetake => 'إعادة الالتقاط';
+
+  @override
+  String get cameraGallery => 'اختر من المعرض';
+
+  @override
+  String get cameraPredicting => 'جاري تحليل المرض...';
+
+  @override
+  String get cameraPredictionResult => 'نتيجة التشخيص';
+
+  @override
+  String get cameraPredictionLabel => 'التشخيص';
+
+  @override
+  String get cameraPredictionConfidence => 'نسبة الثقة';
+
+  @override
+  String get cameraViewImage => 'عرض الصورة';
+
+  @override
+  String get cameraRetryDiagnosis => 'إعادة التشخيص';
+
+  @override
+  String get cameraBackHome => 'العودة للرئيسية';
+
+  @override
+  String get cameraConfidenceVeryHigh => 'ثقة عالية جداً';
+
+  @override
+  String get cameraConfidenceHigh => 'ثقة عالية';
+
+  @override
+  String get cameraConfidenceMedium => 'ثقة متوسطة';
+
+  @override
+  String get cameraConfidenceLow => 'ثقة منخفضة';
+
+  @override
+  String get cameraConfidenceUnknown => 'الثقة غير متاحة';
+
+  @override
+  String get cameraPredictionUnknown => 'مرض غير معروف';
+
+  @override
+  String get cameraNoImage => 'لا توجد صورة بعد';
+
+  @override
+  String get cameraTryAgain => 'حاول مرة أخرى';
+
+  @override
+  String get cameraSourceTitle => 'اختر مصدر الصورة';
+
+  @override
+  String get cameraSourceTakePhoto => 'التقاط صورة (الكاميرا)';
+
+  @override
+  String get cameraSourceGallery => 'اختر من المعرض';
+
+  @override
+  String get errorNoInternet =>
+      'لا يوجد اتصال بالإنترنت. يرجى التحقق من الشبكة.';
+
+  @override
+  String get errorTimeout => 'انتهت مهلة الطلب. حاول مرة أخرى.';
+
+  @override
+  String get errorServer => 'خطأ في الخادم. حاول لاحقاً.';
+
+  @override
+  String get errorInvalidResponse => 'استجابة غير متوقعة من الخادم.';
+
+  @override
+  String get errorCameraPermissionDenied => 'تم رفض إذن الكاميرا.';
+
+  @override
+  String get errorGalleryPermissionDenied => 'تم رفض إذن المعرض.';
+
+  @override
+  String get errorCameraCancelled => 'تم إلغاء اختيار الصورة.';
+
+  @override
+  String get errorUnexpected => 'حدث خطأ غير متوقع. حاول مرة أخرى.';
 }
