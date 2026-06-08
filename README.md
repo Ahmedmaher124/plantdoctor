@@ -207,17 +207,94 @@ const String geminiApiKey = "YOUR_API_KEY";
 
 <div align="center">
 
-| Splash | Home |
-|---|---|
-| <img src="https://github.com/user-attachments/assets/b1e3eca5-accd-40d8-9eb9-5428b8d39057" width="250"/> | <img src="https://github.com/user-attachments/assets/993873c4-6e2b-4283-9f87-b5018bff0237" width="250"/> |
+<h2>🚀 Getting Started</h2>
 
-| Detection | Result |
-|---|---|
-| <img src="https://github.com/user-attachments/assets/bdbce27d-3fa0-4457-8fcd-571eeacb56ef" width="250"/> | <img src="https://github.com/user-attachments/assets/ca548983-32d4-44d2-ac0f-edb32dadf4df" width="250"/> |
+<table>
+<tr>
+<td align="center">
+<b>Splash Screen</b><br>
+<img src="https://github.com/user-attachments/assets/3a5eca84-3857-48d5-a55a-c9118c35dec3" width="250"/>
+</td>
+<td align="center">
+<b>Onboarding</b><br>
+<img src="https://github.com/user-attachments/assets/782b8011-a8bb-4cd6-9745-4f28ae9ef7ad" width="250"/>
+</td>
+</tr>
 
-| AI Chat | History |
-|---|---|
-| <img src="https://github.com/user-attachments/assets/9f59cbc8-cc31-4ca4-a21c-d7755e64b902" width="250"/> | <img src="https://github.com/user-attachments/assets/2af09208-52fb-4a59-b759-e6338e1ff02d" width="250"/> |
+<tr>
+<td align="center">
+<b>Onboarding Step 2</b><br>
+<img src="https://github.com/user-attachments/assets/d383615c-d0a4-41ab-8b6f-989bcef4652b" width="250"/>
+</td>
+<td align="center">
+<b>Onboarding Step 3</b><br>
+<img src="https://github.com/user-attachments/assets/cc9fe175-ee46-4dac-864a-306f9d8ee81e" width="250"/>
+</td>
+</tr>
+</table>
+
+<h2>🏠 Main Experience</h2>
+
+<table>
+<tr>
+<td align="center">
+<b>Home Screen</b><br>
+<img src="https://github.com/user-attachments/assets/e2973013-3fe4-469f-a97a-9bb4b0b777d5" width="250"/>
+</td>
+<td align="center">
+<b>Settings</b><br>
+<img src="https://github.com/user-attachments/assets/e35847c1-cb3a-43a8-956f-a8f7a7558a95" width="250"/>
+</td>
+</tr>
+</table>
+
+<h2>🤖 AI Disease Detection</h2>
+
+<table>
+<tr>
+<td align="center">
+<b>Detection Result</b><br>
+<img src="https://github.com/user-attachments/assets/af1b7fa5-f126-4852-b63f-e724bd2b582d" width="250"/>
+</td>
+<td align="center">
+<b>Gemini AI Assistant</b><br>
+<img src="https://github.com/user-attachments/assets/2107bd12-c75d-4b8e-881a-9457d617df32" width="250"/>
+</td>
+</tr>
+</table>
+
+<h2>🌱 Plant Knowledge</h2>
+
+<table>
+<tr>
+<td align="center">
+<b>Plant Care Tips</b><br>
+<img src="https://github.com/user-attachments/assets/ea2b03a4-62bb-4eb1-bbfa-4e1aa76b51ee" width="250"/>
+</td>
+<td align="center">
+<b>Common Diseases</b><br>
+<img src="https://github.com/user-attachments/assets/13bbe681-8928-46c3-8220-d25be74db214" width="250"/>
+</td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<b>Disease Information</b><br>
+<img src="https://github.com/user-attachments/assets/7d3d0d1b-0bbc-45d7-98ce-b8f2aee6097d" width="250"/>
+</td>
+</tr>
+</table>
+
+<h2>📊 Scan History</h2>
+
+<table>
+<tr>
+<td align="center">
+<b>History Screen</b><br>
+<img src="https://github.com/user-attachments/assets/8f63fae6-268b-457e-95e3-07ec448f2481" width="250"/>
+</td>
+</tr>
+</table>
 
 </div>
 
