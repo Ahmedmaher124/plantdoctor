@@ -8,12 +8,16 @@ class HomeHeader extends StatelessWidget {
   final String title;
   final String subtitle;
   final String searchHint;
+  final TextEditingController? controller;
+  final ValueChanged<String>? onChanged;
 
   const HomeHeader({
     super.key,
     required this.title,
     required this.subtitle,
     required this.searchHint,
+    this.controller,
+    this.onChanged,
   });
 
   @override
@@ -77,11 +81,32 @@ class HomeHeader extends StatelessWidget {
               ],
             ),
             child: TextField(
+              controller: controller,
+              onChanged: onChanged,
               decoration: InputDecoration(
                 icon: const Icon(Icons.search, color: AppColors.textGrey),
                 hintText: searchHint,
                 hintStyle: AppTextStyles.subtitle.copyWith(fontSize: 14),
                 border: InputBorder.none,
+                suffixIcon: controller == null
+                    ? null
+                    : ValueListenableBuilder<TextEditingValue>(
+                        valueListenable: controller!,
+                        builder: (context, value, _) {
+                          if (value.text.isEmpty) {
+                            return const SizedBox.shrink();
+                          }
+                          return IconButton(
+                            padding: EdgeInsets.zero,
+                            constraints: const BoxConstraints(),
+                            icon: const Icon(Icons.clear_rounded, color: AppColors.textGrey, size: 20),
+                            onPressed: () {
+                              controller!.clear();
+                              onChanged?.call('');
+                            },
+                          );
+                        },
+                      ),
               ),
             ),
           ),

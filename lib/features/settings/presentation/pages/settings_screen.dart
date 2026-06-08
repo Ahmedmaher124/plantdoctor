@@ -65,42 +65,6 @@ class SettingsScreen extends StatelessWidget {
                     children: [
                       const SizedBox(height: 8),
 
-                      // ── Appearance ─────────────────────────────────
-                      _SectionHeader(
-                        label: l10n.settingsAppearance,
-                        icon: Icons.palette_outlined,
-                      ),
-                      const SizedBox(height: 12),
-
-                      _SettingsCard(
-                        cardColor: cardColor,
-                        dividerColor: dividerColor,
-                        children: [
-                          _SwitchTile(
-                            icon: isDark
-                                ? Icons.dark_mode_rounded
-                                : Icons.light_mode_rounded,
-                            iconColor: isDark
-                                ? const Color(0xFFF59E0B)
-                                : const Color(0xFFF97316),
-                            iconBg: isDark
-                                ? const Color(0x26F59E0B)
-                                : const Color(0xFFFFF7ED),
-                            title: l10n.settingsDarkMode,
-                            subtitle: isDark
-                                ? l10n.settingsDarkModeOn
-                                : l10n.settingsDarkModeOff,
-                            value: isDark,
-                            textColor: textColor,
-                            subtitleColor: subtitleColor,
-                            onChanged: (val) =>
-                                context.read<SettingsCubit>().toggleDarkMode(val),
-                          ),
-                        ],
-                      ),
-
-                      const SizedBox(height: 24),
-
                       // ── Language ───────────────────────────────────
                       _SectionHeader(
                         label: l10n.settingsLanguage,
@@ -274,81 +238,6 @@ class _SettingsCard extends StatelessWidget {
         ],
       ),
       child: Column(children: children),
-    );
-  }
-}
-
-class _SwitchTile extends StatelessWidget {
-  final IconData icon;
-  final Color iconColor;
-  final Color iconBg;
-  final String title;
-  final String subtitle;
-  final bool value;
-  final Color textColor;
-  final Color subtitleColor;
-  final ValueChanged<bool> onChanged;
-
-  const _SwitchTile({
-    required this.icon,
-    required this.iconColor,
-    required this.iconBg,
-    required this.title,
-    required this.subtitle,
-    required this.value,
-    required this.textColor,
-    required this.subtitleColor,
-    required this.onChanged,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-      child: Row(
-        children: [
-          Container(
-            width: 44,
-            height: 44,
-            decoration: BoxDecoration(
-              color: iconBg,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Icon(icon, color: iconColor, size: 22),
-          ),
-          const SizedBox(width: 14),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                    color: textColor,
-                    fontFamily: AppTextStyles.fontFamily,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 15,
-                  ),
-                ),
-                const SizedBox(height: 2),
-                Text(
-                  subtitle,
-                  style: TextStyle(
-                    color: subtitleColor,
-                    fontFamily: AppTextStyles.fontFamily,
-                    fontSize: 12,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Switch.adaptive(
-            value: value,
-            onChanged: onChanged,
-            activeTrackColor: AppColors.primary,
-          ),
-        ],
-      ),
     );
   }
 }

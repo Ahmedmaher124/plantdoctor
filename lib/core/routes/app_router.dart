@@ -14,6 +14,11 @@ import '../../features/disease_detection/presentation/cubit/disease_cubit.dart';
 import '../../features/disease_prediction/presentation/pages/disease_prediction_screen.dart';
 import '../../features/disease_prediction/presentation/pages/disease_result_screen.dart';
 import '../../features/disease_prediction/data/models/disease_prediction_response.dart';
+import '../../features/plant_care_tips/presentation/pages/plant_care_tips_screen.dart';
+import '../../features/history/presentation/pages/history_screen.dart';
+import '../../features/history/presentation/pages/history_details_screen.dart';
+import '../../features/history/data/models/scan_history_model.dart';
+import '../../features/history/presentation/cubit/history_cubit.dart';
 import '../dependency_injection/injection_container.dart' as di;
 
 final GoRouter appRouter = GoRouter(
@@ -74,6 +79,27 @@ final GoRouter appRouter = GoRouter(
         value: di.sl<DiseaseCubit>(),
         child: const DiseaseListScreen(),
       ),
+    ),
+    GoRoute(
+      path: RouteConstants.plantCareTips,
+      builder: (context, state) => const PlantCareTipsScreen(),
+    ),
+    GoRoute(
+      path: RouteConstants.scanHistory,
+      builder: (context, state) => BlocProvider(
+        create: (_) => di.sl<HistoryCubit>(),
+        child: const ScanHistoryScreen(),
+      ),
+    ),
+    GoRoute(
+      path: RouteConstants.scanHistoryDetails,
+      builder: (context, state) {
+        final scan = state.extra as ScanHistoryModel;
+        return BlocProvider(
+          create: (_) => di.sl<HistoryCubit>(),
+          child: ScanHistoryDetailsScreen(scan: scan),
+        );
+      },
     ),
   ],
 );
