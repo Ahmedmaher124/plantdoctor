@@ -86,6 +86,13 @@ class DiseaseResultScreen extends StatelessWidget {
             _BottomActions(
               onRetry: () => context.pop(),
               onBackHome: () => context.go(RouteConstants.home),
+              onGetTreatment: () {
+                final prompt = l10n.cameraTreatmentPrompt(label);
+                context.push(
+                  RouteConstants.chat,
+                  extra: prompt,
+                );
+              },
             ),
           ],
         ),
@@ -229,7 +236,11 @@ class _DiagnosisCard extends StatelessWidget {
                 const SizedBox(height: 8),
                 Text(
                   label,
-                  style: AppTextStyles.h1.copyWith(fontSize: 22),
+                  style: AppTextStyles.h1.copyWith(
+                    fontSize: 26,
+                    fontWeight: FontWeight.w900,
+                    color: AppColors.primary,
+                  ),
                 ),
               ],
             ),
@@ -402,10 +413,12 @@ class _SemiCircularGauge extends StatelessWidget {
 class _BottomActions extends StatelessWidget {
   final VoidCallback onRetry;
   final VoidCallback onBackHome;
+  final VoidCallback onGetTreatment;
 
   const _BottomActions({
     required this.onRetry,
     required this.onBackHome,
+    required this.onGetTreatment,
   });
 
   @override
@@ -434,6 +447,21 @@ class _BottomActions extends StatelessWidget {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  ElevatedButton.icon(
+                    onPressed: onGetTreatment,
+                    icon: const Icon(Icons.chat_bubble_outline_rounded),
+                    label: Text(l10n.cameraGetTreatment),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.primary,
+                      foregroundColor: AppColors.white,
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                      textStyle: AppTextStyles.buttonText,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
                   OutlinedButton.icon(
                     onPressed: onRetry,
                     icon: const Icon(Icons.refresh_rounded),
@@ -451,31 +479,10 @@ class _BottomActions extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 12),
-                  ElevatedButton.icon(
+                  OutlinedButton.icon(
                     onPressed: onBackHome,
                     icon: const Icon(Icons.home_rounded),
                     label: Text(l10n.cameraBackHome),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.primary,
-                      foregroundColor: AppColors.white,
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(14),
-                      ),
-                      textStyle: AppTextStyles.buttonText,
-                    ),
-                  ),
-                ],
-              );
-            }
-
-            return Row(
-              children: [
-                Expanded(
-                  child: OutlinedButton.icon(
-                    onPressed: onRetry,
-                    icon: const Icon(Icons.refresh_rounded),
-                    label: Text(l10n.cameraRetryDiagnosis),
                     style: OutlinedButton.styleFrom(
                       foregroundColor: AppColors.primary,
                       side: const BorderSide(color: AppColors.primary),
@@ -488,23 +495,69 @@ class _BottomActions extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: ElevatedButton.icon(
-                    onPressed: onBackHome,
-                    icon: const Icon(Icons.home_rounded),
-                    label: Text(l10n.cameraBackHome),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.primary,
-                      foregroundColor: AppColors.white,
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(14),
-                      ),
-                      textStyle: AppTextStyles.buttonText,
+                ],
+              );
+            }
+
+            return Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: onGetTreatment,
+                  icon: const Icon(Icons.chat_bubble_outline_rounded),
+                  label: Text(l10n.cameraGetTreatment),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.primary,
+                    foregroundColor: AppColors.white,
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14),
                     ),
+                    textStyle: AppTextStyles.buttonText,
                   ),
+                ),
+                const SizedBox(height: 12),
+                Row(
+                  children: [
+                    Expanded(
+                      child: OutlinedButton.icon(
+                        onPressed: onRetry,
+                        icon: const Icon(Icons.refresh_rounded),
+                        label: Text(l10n.cameraRetryDiagnosis),
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: AppColors.primary,
+                          side: const BorderSide(color: AppColors.primary),
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          textStyle: AppTextStyles.buttonText.copyWith(
+                            color: AppColors.primary,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: OutlinedButton.icon(
+                        onPressed: onBackHome,
+                        icon: const Icon(Icons.home_rounded),
+                        label: Text(l10n.cameraBackHome),
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: AppColors.primary,
+                          side: const BorderSide(color: AppColors.primary),
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          textStyle: AppTextStyles.buttonText.copyWith(
+                            color: AppColors.primary,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             );

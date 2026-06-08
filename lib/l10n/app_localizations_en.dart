@@ -197,6 +197,8 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get seeAllDiseases => 'See All';
+
+  @override
   String get cameraTitle => 'Disease Prediction';
 
   @override
@@ -261,6 +263,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cameraSourceGallery => 'Choose from Gallery';
+
+  @override
+  String get cameraGetTreatment => 'Get Treatment';
+
+  @override
+  String cameraTreatmentPrompt(Object diseaseName) {
+    return 'The detected plant disease is: $diseaseName. Please explain:\n• Disease description\n• Causes\n• Treatment methods\n• Prevention tips';
+  }
 
   @override
   String get errorNoInternet =>

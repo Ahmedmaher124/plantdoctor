@@ -10,7 +10,8 @@ import '../cubit/chat_cubit.dart';
 import '../cubit/chat_state.dart';
 
 class ChatScreen extends StatefulWidget {
-  const ChatScreen({super.key});
+  final String? initialPrompt;
+  const ChatScreen({super.key, this.initialPrompt});
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
@@ -20,6 +21,18 @@ class _ChatScreenState extends State<ChatScreen> {
   final TextEditingController _controller = TextEditingController();
   final ScrollController _scrollController = ScrollController();
   final FocusNode _focusNode = FocusNode();
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.initialPrompt != null) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) {
+          context.read<ChatCubit>().sendMessage(widget.initialPrompt!);
+        }
+      });
+    }
+  }
 
   @override
   void dispose() {

@@ -63,7 +63,7 @@
   "chatSuggestion2": "كيف أعالج البياض الدقيقي؟",
   "chatSuggestion3": "أفضل سماد للبطاطس؟",
   "commonDiseases": "الأمراض الشائعة",
-  "seeAllDiseases": "عرض الكل"
+  "seeAllDiseases": "عرض الكل",
   "cameraTitle": "تشخيص المرض",
   "cameraCapture": "التقاط صورة",
   "cameraRetake": "إعادة الالتقاط",
@@ -86,6 +86,8 @@
   "cameraSourceTitle": "اختر مصدر الصورة",
   "cameraSourceTakePhoto": "التقاط صورة (الكاميرا)",
   "cameraSourceGallery": "اختر من المعرض",
+  "cameraGetTreatment": "الحصول على العلاج",
+  "cameraTreatmentPrompt": "المرض النباتي المكتشف هو: {diseaseName}. يرجى توضيح:\n• وصف المرض\n• الأسباب\n• طرق العلاج\n• نصائح للوقاية",
   "errorNoInternet": "لا يوجد اتصال بالإنترنت. يرجى التحقق من الشبكة.",
   "errorTimeout": "انتهت مهلة الطلب. حاول مرة أخرى.",
   "errorServer": "خطأ في الخادم. حاول لاحقاً.",

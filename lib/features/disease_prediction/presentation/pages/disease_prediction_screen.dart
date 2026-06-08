@@ -4,12 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:plantdoctor/l10n/app_localizations.dart';
 
+import 'package:go_router/go_router.dart';
+import '../../../../core/routes/route_constants.dart';
 import '../../../../core/dependency_injection/injection_container.dart' as di;
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../data/models/disease_prediction_response.dart';
 import '../cubit/disease_prediction_cubit.dart';
 import '../cubit/disease_prediction_state.dart';
+import 'disease_result_screen.dart';
 
 class DiseasePredictionScreen extends StatelessWidget {
   const DiseasePredictionScreen({super.key});
@@ -31,23 +34,6 @@ class _DiseasePredictionView extends StatefulWidget {
 }
 
 class _DiseasePredictionViewState extends State<_DiseasePredictionView> {
-  bool _didAutoCapture = false;
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    if (_didAutoCapture) {
-      return;
-    }
-
-    _didAutoCapture = true;
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (mounted) {
-        context.read<DiseasePredictionCubit>().captureAndPredict();
-      }
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -64,7 +50,19 @@ class _DiseasePredictionViewState extends State<_DiseasePredictionView> {
         backgroundColor: AppColors.primary,
         foregroundColor: Colors.white,
       ),
-      body: BlocBuilder<DiseasePredictionCubit, DiseasePredictionState>(
+      body: BlocListener<DiseasePredictionCubit, DiseasePredictionState>(
+        listener: (context, state) {
+          if (state is DiseasePredictionSuccess) {
+            context.push(
+              RouteConstants.resultDetails,
+              extra: DiseaseResultArgs(
+                response: state.response,
+                imagePath: state.imageFile?.path,
+              ),
+            );
+          }
+        },
+        child: BlocBuilder<DiseasePredictionCubit, DiseasePredictionState>(
         builder: (context, state) {
           final imageFile = state.imageFile;
           final isLoading = state is DiseasePredictionLoading;
@@ -164,8 +162,9 @@ class _DiseasePredictionViewState extends State<_DiseasePredictionView> {
           );
         },
       ),
-    );
-  }
+    ),
+  );
+}
 
   String _errorMessage(AppLocalizations l10n, DiseasePredictionErrorType type) {
     switch (type) {

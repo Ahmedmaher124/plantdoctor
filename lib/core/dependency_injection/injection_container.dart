@@ -1,7 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:dio/dio.dart';
 import '../../features/splash/presentation/cubit/splash_cubit.dart';
 import '../../features/onboarding/presentation/cubit/onboarding_cubit.dart';
 import '../../features/settings/presentation/cubit/settings_cubit.dart';
@@ -23,21 +22,28 @@ import '../../features/disease_prediction/presentation/cubit/disease_prediction_
 
 final sl = GetIt.instance;
 
+const _plainDioName = 'plainDio';
+const _geminiDioName = 'geminiDio';
+
 Future<void> init() async {
   //---------------------------------------------------------
   // External
   //---------------------------------------------------------
   final sharedPreferences = await SharedPreferences.getInstance();
   sl.registerLazySingleton(() => sharedPreferences);
-  sl.registerLazySingleton(() => Dio());
+  sl.registerLazySingleton<Dio>(() => Dio(), instanceName: _plainDioName);
 
   //---------------------------------------------------------
   // Core
   //---------------------------------------------------------
-  sl.registerLazySingleton(() => ApiClient(dio: sl()));
+  sl.registerLazySingleton(
+      () => ApiClient(dio: sl<Dio>(instanceName: _plainDioName)));
 
   // Dio — Gemini API client
-  sl.registerLazySingleton<Dio>(() => GeminiDioClient.instance);
+  sl.registerLazySingleton<Dio>(
+    () => GeminiDioClient.instance,
+    instanceName: _geminiDioName,
+  );
 
   //---------------------------------------------------------
   // Features - Splash
@@ -61,7 +67,7 @@ Future<void> init() async {
   // Data source
   sl.registerLazySingleton<GeminiRemoteDataSource>(
     () => GeminiRemoteDataSourceImpl(
-      dio: sl<Dio>(),
+      dio: sl<Dio>(instanceName: _geminiDioName),
       apiKey: ApiKeys.gemini,
     ),
   );
@@ -88,7 +94,7 @@ Future<void> init() async {
   // Data source — uses a plain Dio (not the Gemini one)
   sl.registerLazySingleton<DiseaseRemoteDataSource>(
     () => DiseaseRemoteDataSourceImpl(
-      dio: sl<Dio>(),
+      dio: sl<Dio>(instanceName: _plainDioName),
       apiKey: ApiKeys.perenual,
     ),
   );

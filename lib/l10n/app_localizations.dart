@@ -475,6 +475,7 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'See All'**
   String get seeAllDiseases;
+
   /// Camera screen title
   ///
   /// In en, this message translates to:
@@ -606,6 +607,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Choose from Gallery'**
   String get cameraSourceGallery;
+
+  /// Get treatment button label
+  ///
+  /// In en, this message translates to:
+  /// **'Get Treatment'**
+  String get cameraGetTreatment;
+
+  /// Default prompt to send to Gemini Chat for disease treatment
+  ///
+  /// In en, this message translates to:
+  /// **'The detected plant disease is: {diseaseName}. Please explain:\n• Disease description\n• Causes\n• Treatment methods\n• Prevention tips'**
+  String cameraTreatmentPrompt(Object diseaseName);
 
   /// Error shown when there is no network
   ///

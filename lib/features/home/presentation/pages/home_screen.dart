@@ -272,7 +272,7 @@ class HomeScreen extends StatelessWidget {
       await cubit.close();
       if (context.mounted) {
         context.push(
-          RouteConstants.result,
+          RouteConstants.resultDetails,
           extra: DiseaseResultArgs(
             response: response,
             imagePath: imageFile.path,

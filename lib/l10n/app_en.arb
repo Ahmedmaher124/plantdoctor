@@ -188,7 +188,7 @@
   "@commonDiseases": { "description": "Section title for plant diseases list" },
 
   "seeAllDiseases": "See All",
-  "@seeAllDiseases": { "description": "See all diseases button" }
+  "@seeAllDiseases": { "description": "See all diseases button" },
   "cameraTitle": "Disease Prediction",
   "@cameraTitle": { "description": "Camera screen title" },
 
@@ -254,6 +254,12 @@
 
   "cameraSourceGallery": "Choose from Gallery",
   "@cameraSourceGallery": { "description": "Bottom sheet gallery option" },
+
+  "cameraGetTreatment": "Get Treatment",
+  "@cameraGetTreatment": { "description": "Get treatment button label" },
+
+  "cameraTreatmentPrompt": "The detected plant disease is: {diseaseName}. Please explain:\n• Disease description\n• Causes\n• Treatment methods\n• Prevention tips",
+  "@cameraTreatmentPrompt": { "description": "Default prompt to send to Gemini Chat for disease treatment" },
 
   "errorNoInternet": "No internet connection. Please check your network.",
   "@errorNoInternet": { "description": "Error shown when there is no network" },

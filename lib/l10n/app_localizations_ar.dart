@@ -198,6 +198,8 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get seeAllDiseases => 'عرض الكل';
+
+  @override
   String get cameraTitle => 'تشخيص المرض';
 
   @override
@@ -262,6 +264,14 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get cameraSourceGallery => 'اختر من المعرض';
+
+  @override
+  String get cameraGetTreatment => 'الحصول على العلاج';
+
+  @override
+  String cameraTreatmentPrompt(Object diseaseName) {
+    return 'المرض النباتي المكتشف هو: $diseaseName. يرجى توضيح:\n• وصف المرض\n• الأسباب\n• طرق العلاج\n• نصائح للوقاية';
+  }
 
   @override
   String get errorNoInternet =>

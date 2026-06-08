@@ -4,6 +4,7 @@ class RouteConstants {
   static const String home = '/home';
   static const String camera = '/camera';
   static const String result = '/result';
+  static const String resultDetails = '/result-details';
   static const String chat = '/chat';
   static const String settings = '/settings';
   static const String diseases = '/diseases';

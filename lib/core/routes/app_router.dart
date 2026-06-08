@@ -33,16 +33,10 @@ final GoRouter appRouter = GoRouter(
     ),
     GoRoute(
       path: RouteConstants.camera,
-      builder: (context, state) =>
-          const Scaffold(body: Center(child: Text('Camera Screen'))),
-    ),
-    GoRoute(
-      path: RouteConstants.result,
-    
       builder: (context, state) => const DiseasePredictionScreen(),
     ),
     GoRoute(
-      path: RouteConstants.result,
+      path: RouteConstants.resultDetails,
       builder: (context, state) {
         final response = state.extra;
         if (response is DiseaseResultArgs) {
@@ -59,10 +53,13 @@ final GoRouter appRouter = GoRouter(
     ),
     GoRoute(
       path: RouteConstants.chat,
-      builder: (context, state) => BlocProvider(
-        create: (_) => di.sl<ChatCubit>(),
-        child: const ChatScreen(),
-      ),
+      builder: (context, state) {
+        final initialPrompt = state.extra as String?;
+        return BlocProvider(
+          create: (_) => di.sl<ChatCubit>(),
+          child: ChatScreen(initialPrompt: initialPrompt),
+        );
+      },
     ),
     GoRoute(
       path: RouteConstants.settings,
