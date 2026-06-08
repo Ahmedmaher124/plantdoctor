@@ -25,6 +25,11 @@ dependencies:
   # Utilities
   equatable: ^2.0.5
   shared_preferences: ^2.2.2
+  dio: ^5.7.0
+  image_picker: ^1.1.2
+
+  
+  cached_network_image: ^3.4.1
 
 dev_dependencies:
   flutter_test:

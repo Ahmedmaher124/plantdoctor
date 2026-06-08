@@ -403,6 +403,270 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'5 days ago'**
   String get fiveDaysAgo;
+
+  /// Chat screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Plant AI Assistant'**
+  String get chatTitle;
+
+  /// Chat screen subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Ask about plant diseases, treatments & care'**
+  String get chatSubtitle;
+
+  /// Chat input field hint
+  ///
+  /// In en, this message translates to:
+  /// **'Ask about your plant...'**
+  String get chatInputHint;
+
+  /// Welcome message shown when chat is empty
+  ///
+  /// In en, this message translates to:
+  /// **'Hello! I\'m PlantDoc 🌿\nAsk me about plant diseases, treatments, or any agricultural question.'**
+  String get chatWelcome;
+
+  /// Retry button in chat error
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get chatErrorRetry;
+
+  /// Clear chat button tooltip
+  ///
+  /// In en, this message translates to:
+  /// **'Clear conversation'**
+  String get chatClearConversation;
+
+  /// AI typing indicator label
+  ///
+  /// In en, this message translates to:
+  /// **'PlantDoc is thinking...'**
+  String get chatTyping;
+
+  /// Suggested question chip 1
+  ///
+  /// In en, this message translates to:
+  /// **'Why are my tomato leaves turning yellow?'**
+  String get chatSuggestion1;
+
+  /// Suggested question chip 2
+  ///
+  /// In en, this message translates to:
+  /// **'How to treat powdery mildew?'**
+  String get chatSuggestion2;
+
+  /// Suggested question chip 3
+  ///
+  /// In en, this message translates to:
+  /// **'Best fertilizer for potatoes?'**
+  String get chatSuggestion3;
+
+  /// Section title for plant diseases list
+  ///
+  /// In en, this message translates to:
+  /// **'Common Diseases'**
+  String get commonDiseases;
+
+  /// See all diseases button
+  ///
+  /// In en, this message translates to:
+  /// **'See All'**
+  String get seeAllDiseases;
+
+  /// Camera screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Disease Prediction'**
+  String get cameraTitle;
+
+  /// Capture image button label
+  ///
+  /// In en, this message translates to:
+  /// **'Capture Image'**
+  String get cameraCapture;
+
+  /// Retake image button label
+  ///
+  /// In en, this message translates to:
+  /// **'Retake Image'**
+  String get cameraRetake;
+
+  /// Pick image from gallery button label
+  ///
+  /// In en, this message translates to:
+  /// **'Choose from Gallery'**
+  String get cameraGallery;
+
+  /// Loading text during prediction
+  ///
+  /// In en, this message translates to:
+  /// **'Predicting disease...'**
+  String get cameraPredicting;
+
+  /// Prediction result card title
+  ///
+  /// In en, this message translates to:
+  /// **'Prediction Result'**
+  String get cameraPredictionResult;
+
+  /// Prediction label
+  ///
+  /// In en, this message translates to:
+  /// **'Prediction'**
+  String get cameraPredictionLabel;
+
+  /// Prediction confidence label
+  ///
+  /// In en, this message translates to:
+  /// **'Confidence'**
+  String get cameraPredictionConfidence;
+
+  /// View image button label
+  ///
+  /// In en, this message translates to:
+  /// **'View Image'**
+  String get cameraViewImage;
+
+  /// Retry diagnosis button label
+  ///
+  /// In en, this message translates to:
+  /// **'Diagnose Again'**
+  String get cameraRetryDiagnosis;
+
+  /// Back to home button label
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Home'**
+  String get cameraBackHome;
+
+  /// Confidence level label (very high)
+  ///
+  /// In en, this message translates to:
+  /// **'Very high confidence'**
+  String get cameraConfidenceVeryHigh;
+
+  /// Confidence level label (high)
+  ///
+  /// In en, this message translates to:
+  /// **'High confidence'**
+  String get cameraConfidenceHigh;
+
+  /// Confidence level label (medium)
+  ///
+  /// In en, this message translates to:
+  /// **'Medium confidence'**
+  String get cameraConfidenceMedium;
+
+  /// Confidence level label (low)
+  ///
+  /// In en, this message translates to:
+  /// **'Low confidence'**
+  String get cameraConfidenceLow;
+
+  /// Confidence label when value is missing
+  ///
+  /// In en, this message translates to:
+  /// **'Confidence unavailable'**
+  String get cameraConfidenceUnknown;
+
+  /// Fallback text when no prediction is available
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown disease'**
+  String get cameraPredictionUnknown;
+
+  /// Placeholder when no image is selected
+  ///
+  /// In en, this message translates to:
+  /// **'No image captured yet'**
+  String get cameraNoImage;
+
+  /// Retry prediction button label
+  ///
+  /// In en, this message translates to:
+  /// **'Try Again'**
+  String get cameraTryAgain;
+
+  /// Bottom sheet title for image source
+  ///
+  /// In en, this message translates to:
+  /// **'Select Image Source'**
+  String get cameraSourceTitle;
+
+  /// Bottom sheet camera option
+  ///
+  /// In en, this message translates to:
+  /// **'Take Photo (Camera)'**
+  String get cameraSourceTakePhoto;
+
+  /// Bottom sheet gallery option
+  ///
+  /// In en, this message translates to:
+  /// **'Choose from Gallery'**
+  String get cameraSourceGallery;
+
+  /// Get treatment button label
+  ///
+  /// In en, this message translates to:
+  /// **'Get Treatment'**
+  String get cameraGetTreatment;
+
+  /// Default prompt to send to Gemini Chat for disease treatment
+  ///
+  /// In en, this message translates to:
+  /// **'The detected plant disease is: {diseaseName}. Please explain:\n• Disease description\n• Causes\n• Treatment methods\n• Prevention tips'**
+  String cameraTreatmentPrompt(Object diseaseName);
+
+  /// Error shown when there is no network
+  ///
+  /// In en, this message translates to:
+  /// **'No internet connection. Please check your network.'**
+  String get errorNoInternet;
+
+  /// Error shown on timeout
+  ///
+  /// In en, this message translates to:
+  /// **'Request timed out. Please try again.'**
+  String get errorTimeout;
+
+  /// Error shown on server failures
+  ///
+  /// In en, this message translates to:
+  /// **'Server error. Please try again later.'**
+  String get errorServer;
+
+  /// Error shown on invalid response format
+  ///
+  /// In en, this message translates to:
+  /// **'Unexpected response from server.'**
+  String get errorInvalidResponse;
+
+  /// Error when camera permission denied
+  ///
+  /// In en, this message translates to:
+  /// **'Camera permission denied.'**
+  String get errorCameraPermissionDenied;
+
+  /// Error when gallery permission denied
+  ///
+  /// In en, this message translates to:
+  /// **'Gallery permission denied.'**
+  String get errorGalleryPermissionDenied;
+
+  /// Error shown when user cancels image selection
+  ///
+  /// In en, this message translates to:
+  /// **'Image selection was cancelled.'**
+  String get errorCameraCancelled;
+
+  /// Fallback error message
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Please try again.'**
+  String get errorUnexpected;
 }
 
 class _AppLocalizationsDelegate

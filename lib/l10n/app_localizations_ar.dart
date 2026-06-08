@@ -161,4 +161,140 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get fiveDaysAgo => 'منذ 5 أيام';
+
+  @override
+  String get chatTitle => 'مساعد النبات الذكي';
+
+  @override
+  String get chatSubtitle => 'اسأل عن أمراض النباتات والعلاجات والرعاية';
+
+  @override
+  String get chatInputHint => 'اسأل عن نباتك...';
+
+  @override
+  String get chatWelcome =>
+      'مرحباً! أنا PlantDoc 🌿\nاسألني عن أمراض النباتات والعلاجات أو أي سؤال زراعي.';
+
+  @override
+  String get chatErrorRetry => 'إعادة المحاولة';
+
+  @override
+  String get chatClearConversation => 'مسح المحادثة';
+
+  @override
+  String get chatTyping => 'PlantDoc يفكر...';
+
+  @override
+  String get chatSuggestion1 => 'لماذا تصفر أوراق الطماطم؟';
+
+  @override
+  String get chatSuggestion2 => 'كيف أعالج البياض الدقيقي؟';
+
+  @override
+  String get chatSuggestion3 => 'أفضل سماد للبطاطس؟';
+
+  @override
+  String get commonDiseases => 'الأمراض الشائعة';
+
+  @override
+  String get seeAllDiseases => 'عرض الكل';
+
+  @override
+  String get cameraTitle => 'تشخيص المرض';
+
+  @override
+  String get cameraCapture => 'التقاط صورة';
+
+  @override
+  String get cameraRetake => 'إعادة الالتقاط';
+
+  @override
+  String get cameraGallery => 'اختر من المعرض';
+
+  @override
+  String get cameraPredicting => 'جاري تحليل المرض...';
+
+  @override
+  String get cameraPredictionResult => 'نتيجة التشخيص';
+
+  @override
+  String get cameraPredictionLabel => 'التشخيص';
+
+  @override
+  String get cameraPredictionConfidence => 'نسبة الثقة';
+
+  @override
+  String get cameraViewImage => 'عرض الصورة';
+
+  @override
+  String get cameraRetryDiagnosis => 'إعادة التشخيص';
+
+  @override
+  String get cameraBackHome => 'العودة للرئيسية';
+
+  @override
+  String get cameraConfidenceVeryHigh => 'ثقة عالية جداً';
+
+  @override
+  String get cameraConfidenceHigh => 'ثقة عالية';
+
+  @override
+  String get cameraConfidenceMedium => 'ثقة متوسطة';
+
+  @override
+  String get cameraConfidenceLow => 'ثقة منخفضة';
+
+  @override
+  String get cameraConfidenceUnknown => 'الثقة غير متاحة';
+
+  @override
+  String get cameraPredictionUnknown => 'مرض غير معروف';
+
+  @override
+  String get cameraNoImage => 'لا توجد صورة بعد';
+
+  @override
+  String get cameraTryAgain => 'حاول مرة أخرى';
+
+  @override
+  String get cameraSourceTitle => 'اختر مصدر الصورة';
+
+  @override
+  String get cameraSourceTakePhoto => 'التقاط صورة (الكاميرا)';
+
+  @override
+  String get cameraSourceGallery => 'اختر من المعرض';
+
+  @override
+  String get cameraGetTreatment => 'الحصول على العلاج';
+
+  @override
+  String cameraTreatmentPrompt(Object diseaseName) {
+    return 'المرض النباتي المكتشف هو: $diseaseName. يرجى توضيح:\n• وصف المرض\n• الأسباب\n• طرق العلاج\n• نصائح للوقاية';
+  }
+
+  @override
+  String get errorNoInternet =>
+      'لا يوجد اتصال بالإنترنت. يرجى التحقق من الشبكة.';
+
+  @override
+  String get errorTimeout => 'انتهت مهلة الطلب. حاول مرة أخرى.';
+
+  @override
+  String get errorServer => 'خطأ في الخادم. حاول لاحقاً.';
+
+  @override
+  String get errorInvalidResponse => 'استجابة غير متوقعة من الخادم.';
+
+  @override
+  String get errorCameraPermissionDenied => 'تم رفض إذن الكاميرا.';
+
+  @override
+  String get errorGalleryPermissionDenied => 'تم رفض إذن المعرض.';
+
+  @override
+  String get errorCameraCancelled => 'تم إلغاء اختيار الصورة.';
+
+  @override
+  String get errorUnexpected => 'حدث خطأ غير متوقع. حاول مرة أخرى.';
 }

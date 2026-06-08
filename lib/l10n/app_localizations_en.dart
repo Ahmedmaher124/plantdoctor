@@ -160,4 +160,140 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get fiveDaysAgo => '5 days ago';
+
+  @override
+  String get chatTitle => 'Plant AI Assistant';
+
+  @override
+  String get chatSubtitle => 'Ask about plant diseases, treatments & care';
+
+  @override
+  String get chatInputHint => 'Ask about your plant...';
+
+  @override
+  String get chatWelcome =>
+      'Hello! I\'m PlantDoc 🌿\nAsk me about plant diseases, treatments, or any agricultural question.';
+
+  @override
+  String get chatErrorRetry => 'Retry';
+
+  @override
+  String get chatClearConversation => 'Clear conversation';
+
+  @override
+  String get chatTyping => 'PlantDoc is thinking...';
+
+  @override
+  String get chatSuggestion1 => 'Why are my tomato leaves turning yellow?';
+
+  @override
+  String get chatSuggestion2 => 'How to treat powdery mildew?';
+
+  @override
+  String get chatSuggestion3 => 'Best fertilizer for potatoes?';
+
+  @override
+  String get commonDiseases => 'Common Diseases';
+
+  @override
+  String get seeAllDiseases => 'See All';
+
+  @override
+  String get cameraTitle => 'Disease Prediction';
+
+  @override
+  String get cameraCapture => 'Capture Image';
+
+  @override
+  String get cameraRetake => 'Retake Image';
+
+  @override
+  String get cameraGallery => 'Choose from Gallery';
+
+  @override
+  String get cameraPredicting => 'Predicting disease...';
+
+  @override
+  String get cameraPredictionResult => 'Prediction Result';
+
+  @override
+  String get cameraPredictionLabel => 'Prediction';
+
+  @override
+  String get cameraPredictionConfidence => 'Confidence';
+
+  @override
+  String get cameraViewImage => 'View Image';
+
+  @override
+  String get cameraRetryDiagnosis => 'Diagnose Again';
+
+  @override
+  String get cameraBackHome => 'Back to Home';
+
+  @override
+  String get cameraConfidenceVeryHigh => 'Very high confidence';
+
+  @override
+  String get cameraConfidenceHigh => 'High confidence';
+
+  @override
+  String get cameraConfidenceMedium => 'Medium confidence';
+
+  @override
+  String get cameraConfidenceLow => 'Low confidence';
+
+  @override
+  String get cameraConfidenceUnknown => 'Confidence unavailable';
+
+  @override
+  String get cameraPredictionUnknown => 'Unknown disease';
+
+  @override
+  String get cameraNoImage => 'No image captured yet';
+
+  @override
+  String get cameraTryAgain => 'Try Again';
+
+  @override
+  String get cameraSourceTitle => 'Select Image Source';
+
+  @override
+  String get cameraSourceTakePhoto => 'Take Photo (Camera)';
+
+  @override
+  String get cameraSourceGallery => 'Choose from Gallery';
+
+  @override
+  String get cameraGetTreatment => 'Get Treatment';
+
+  @override
+  String cameraTreatmentPrompt(Object diseaseName) {
+    return 'The detected plant disease is: $diseaseName. Please explain:\n• Disease description\n• Causes\n• Treatment methods\n• Prevention tips';
+  }
+
+  @override
+  String get errorNoInternet =>
+      'No internet connection. Please check your network.';
+
+  @override
+  String get errorTimeout => 'Request timed out. Please try again.';
+
+  @override
+  String get errorServer => 'Server error. Please try again later.';
+
+  @override
+  String get errorInvalidResponse => 'Unexpected response from server.';
+
+  @override
+  String get errorCameraPermissionDenied => 'Camera permission denied.';
+
+  @override
+  String get errorGalleryPermissionDenied => 'Gallery permission denied.';
+
+  @override
+  String get errorCameraCancelled => 'Image selection was cancelled.';
+
+  @override
+  String get errorUnexpected => 'Something went wrong. Please try again.';
 }
