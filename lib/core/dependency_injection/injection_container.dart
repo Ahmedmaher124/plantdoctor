@@ -19,6 +19,16 @@ import '../network/gemini_dio_client.dart';
 import '../network/api_client.dart';
 import '../../features/disease_prediction/data/repositories/disease_prediction_repository.dart';
 import '../../features/disease_prediction/presentation/cubit/disease_prediction_cubit.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import '../../features/history/data/models/scan_history_model.dart';
+import '../../features/history/data/datasource/scan_history_local_datasource.dart';
+import '../../features/history/data/repositories/scan_history_repository_impl.dart';
+import '../../features/history/domain/repositories/scan_history_repository.dart';
+import '../../features/history/domain/usecases/save_scan_usecase.dart';
+import '../../features/history/domain/usecases/get_scans_usecase.dart';
+import '../../features/history/domain/usecases/delete_scan_usecase.dart';
+import '../../features/history/domain/usecases/clear_history_usecase.dart';
+import '../../features/history/presentation/cubit/history_cubit.dart';
 
 final sl = GetIt.instance;
 
@@ -26,6 +36,12 @@ const _plainDioName = 'plainDio';
 const _geminiDioName = 'geminiDio';
 
 Future<void> init() async {
+  // Initialize Hive
+  await Hive.initFlutter();
+  Hive.registerAdapter(ScanHistoryModelAdapter());
+  final scanHistoryBox = await Hive.openBox<ScanHistoryModel>('scan_history');
+  sl.registerLazySingleton<Box<ScanHistoryModel>>(() => scanHistoryBox);
+
   //---------------------------------------------------------
   // External
   //---------------------------------------------------------
@@ -116,5 +132,37 @@ Future<void> init() async {
   // Features - Disease Prediction
   //---------------------------------------------------------
   sl.registerLazySingleton(() => DiseasePredictionRepository(apiClient: sl()));
-  sl.registerFactory(() => DiseasePredictionCubit(repository: sl()));
+  sl.registerFactory(
+    () => DiseasePredictionCubit(
+      repository: sl(),
+      saveScanUseCase: sl(),
+    ),
+  );
+
+  //---------------------------------------------------------
+  // Features - History
+  //---------------------------------------------------------
+  // Data source
+  sl.registerLazySingleton<ScanHistoryLocalDataSource>(
+    () => ScanHistoryLocalDataSourceImpl(sl<Box<ScanHistoryModel>>()),
+  );
+
+  // Repository
+  sl.registerLazySingleton<ScanHistoryRepository>(
+    () => ScanHistoryRepositoryImpl(sl<ScanHistoryLocalDataSource>()),
+  );
+
+  // Use cases
+  sl.registerLazySingleton(() => SaveScanUseCase(sl<ScanHistoryRepository>()));
+  sl.registerLazySingleton(() => GetScansUseCase(sl<ScanHistoryRepository>()));
+  sl.registerLazySingleton(() => DeleteScanUseCase(sl<ScanHistoryRepository>()));
+  sl.registerLazySingleton(() => ClearHistoryUseCase(sl<ScanHistoryRepository>()));
+
+  // Cubit
+  sl.registerFactory(
+    () => HistoryCubit(
+      deleteScanUseCase: sl<DeleteScanUseCase>(),
+      clearHistoryUseCase: sl<ClearHistoryUseCase>(),
+    ),
+  );
 }

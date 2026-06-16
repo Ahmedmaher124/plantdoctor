@@ -283,5 +283,82 @@
   "@errorCameraCancelled": { "description": "Error shown when user cancels image selection" },
 
   "errorUnexpected": "Something went wrong. Please try again.",
-  "@errorUnexpected": { "description": "Fallback error message" }
+  "@errorUnexpected": { "description": "Fallback error message" },
+
+  "homeNoPlantsFound": "No plants found",
+  "@homeNoPlantsFound": { "description": "Search result - no plants found title" },
+
+  "homeTryAnotherSearch": "Try searching for another plant",
+  "@homeTryAnotherSearch": { "description": "Search result - no plants found subtitle hint" },
+
+  "plantCareTipsTitle": "Plant Care Tips",
+  "@plantCareTipsTitle": { "description": "Title of the plant care tips screen" },
+
+  "tipWateringTitle": "Watering",
+  "@tipWateringTitle": { "description": "Watering care tip title" },
+  "tipWateringDesc": "Water plants moderately and avoid overwatering to prevent root rot.",
+  "@tipWateringDesc": { "description": "Watering care tip description" },
+
+  "tipSunlightTitle": "Sunlight",
+  "@tipSunlightTitle": { "description": "Sunlight care tip title" },
+  "tipSunlightDesc": "Ensure the plant receives enough sunlight according to its needs.",
+  "@tipSunlightDesc": { "description": "Sunlight care tip description" },
+
+  "tipFertilizationTitle": "Fertilization",
+  "@tipFertilizationTitle": { "description": "Fertilization care tip title" },
+  "tipFertilizationDesc": "Use appropriate fertilizer based on the plant type and growth stage.",
+  "@tipFertilizationDesc": { "description": "Fertilization care tip description" },
+
+  "tipPreventionTitle": "Disease Prevention",
+  "@tipPreventionTitle": { "description": "Disease prevention care tip title" },
+  "tipPreventionDesc": "Remove infected leaves immediately to prevent disease spread.",
+  "@tipPreventionDesc": { "description": "Disease prevention care tip description" },
+
+  "tipInspectionTitle": "Regular Inspection",
+  "@tipInspectionTitle": { "description": "Inspection care tip title" },
+  "tipInspectionDesc": "Check leaves and stems regularly to detect problems early.",
+  "@tipInspectionDesc": { "description": "Inspection care tip description" },
+
+  "historyTitle": "Scan History",
+  "@historyTitle": { "description": "Title of the scan history screen" },
+  "historyEmptyState": "No scans yet",
+  "@historyEmptyState": { "description": "Empty state label for scan history" },
+  "historySearchPlaceholder": "Search by plant or disease...",
+  "@historySearchPlaceholder": { "description": "Hint text for search bar in history screen" },
+  "historyDeleteAllConfirmTitle": "Delete All Scans",
+  "@historyDeleteAllConfirmTitle": { "description": "Title for delete all history dialog" },
+  "historyDeleteAllConfirmMessage": "Are you sure you want to delete all scan history? This action cannot be undone.",
+  "@historyDeleteAllConfirmMessage": { "description": "Warning message for delete all history dialog" },
+  "historyDeleteSingleConfirmTitle": "Delete Scan",
+  "@historyDeleteSingleConfirmTitle": { "description": "Title for delete single scan dialog" },
+  "historyDeleteSingleConfirmMessage": "Are you sure you want to delete this scan?",
+  "@historyDeleteSingleConfirmMessage": { "description": "Warning message for delete single scan dialog" },
+  "delete": "Delete",
+  "@delete": { "description": "Label for delete button" },
+  "cancel": "Cancel",
+  "@cancel": { "description": "Label for cancel button" },
+  "allScansDeleted": "All scans deleted successfully",
+  "@allScansDeleted": { "description": "Snackbar text on clear all scans" },
+  "scanDeleted": "Scan deleted successfully",
+  "@scanDeleted": { "description": "Snackbar text on single scan deleted" },
+  "statusLabel": "Health Status",
+  "@statusLabel": { "description": "Label for health status category" },
+  "statusHealthy": "Healthy",
+  "@statusHealthy": { "description": "Status text: healthy" },
+  "statusWarning": "Early Disease / Warning",
+  "@statusWarning": { "description": "Status text: early warning" },
+  "statusDisease": "Disease Detected",
+  "@statusDisease": { "description": "Status text: disease detected" },
+  "historyTreatmentPrompt": "The detected plant is {plantName}.\nThe detected disease is {diseaseName}.\n\nPlease provide:\n* Disease description\n* Causes\n* Treatment methods\n* Prevention tips",
+  "@historyTreatmentPrompt": {
+    "description": "Prompt template sent to Gemini for treatment of scan history items",
+    "placeholders": {
+      "plantName": {
+        "type": "String"
+      },
+      "diseaseName": {
+        "type": "String"
+      }
+    }
+  }
 }

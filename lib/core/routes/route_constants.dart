@@ -8,4 +8,7 @@ class RouteConstants {
   static const String chat = '/chat';
   static const String settings = '/settings';
   static const String diseases = '/diseases';
+  static const String plantCareTips = '/plant-care-tips';
+  static const String scanHistory = '/scan-history';
+  static const String scanHistoryDetails = '/scan-history-details';
 }

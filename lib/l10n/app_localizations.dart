@@ -667,6 +667,180 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Something went wrong. Please try again.'**
   String get errorUnexpected;
+
+  /// Search result - no plants found title
+  ///
+  /// In en, this message translates to:
+  /// **'No plants found'**
+  String get homeNoPlantsFound;
+
+  /// Search result - no plants found subtitle hint
+  ///
+  /// In en, this message translates to:
+  /// **'Try searching for another plant'**
+  String get homeTryAnotherSearch;
+
+  /// Title of the plant care tips screen
+  ///
+  /// In en, this message translates to:
+  /// **'Plant Care Tips'**
+  String get plantCareTipsTitle;
+
+  /// Watering care tip title
+  ///
+  /// In en, this message translates to:
+  /// **'Watering'**
+  String get tipWateringTitle;
+
+  /// Watering care tip description
+  ///
+  /// In en, this message translates to:
+  /// **'Water plants moderately and avoid overwatering to prevent root rot.'**
+  String get tipWateringDesc;
+
+  /// Sunlight care tip title
+  ///
+  /// In en, this message translates to:
+  /// **'Sunlight'**
+  String get tipSunlightTitle;
+
+  /// Sunlight care tip description
+  ///
+  /// In en, this message translates to:
+  /// **'Ensure the plant receives enough sunlight according to its needs.'**
+  String get tipSunlightDesc;
+
+  /// Fertilization care tip title
+  ///
+  /// In en, this message translates to:
+  /// **'Fertilization'**
+  String get tipFertilizationTitle;
+
+  /// Fertilization care tip description
+  ///
+  /// In en, this message translates to:
+  /// **'Use appropriate fertilizer based on the plant type and growth stage.'**
+  String get tipFertilizationDesc;
+
+  /// Disease prevention care tip title
+  ///
+  /// In en, this message translates to:
+  /// **'Disease Prevention'**
+  String get tipPreventionTitle;
+
+  /// Disease prevention care tip description
+  ///
+  /// In en, this message translates to:
+  /// **'Remove infected leaves immediately to prevent disease spread.'**
+  String get tipPreventionDesc;
+
+  /// Inspection care tip title
+  ///
+  /// In en, this message translates to:
+  /// **'Regular Inspection'**
+  String get tipInspectionTitle;
+
+  /// Inspection care tip description
+  ///
+  /// In en, this message translates to:
+  /// **'Check leaves and stems regularly to detect problems early.'**
+  String get tipInspectionDesc;
+
+  /// Title of the scan history screen
+  ///
+  /// In en, this message translates to:
+  /// **'Scan History'**
+  String get historyTitle;
+
+  /// Empty state label for scan history
+  ///
+  /// In en, this message translates to:
+  /// **'No scans yet'**
+  String get historyEmptyState;
+
+  /// Hint text for search bar in history screen
+  ///
+  /// In en, this message translates to:
+  /// **'Search by plant or disease...'**
+  String get historySearchPlaceholder;
+
+  /// Title for delete all history dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Delete All Scans'**
+  String get historyDeleteAllConfirmTitle;
+
+  /// Warning message for delete all history dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete all scan history? This action cannot be undone.'**
+  String get historyDeleteAllConfirmMessage;
+
+  /// Title for delete single scan dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Scan'**
+  String get historyDeleteSingleConfirmTitle;
+
+  /// Warning message for delete single scan dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this scan?'**
+  String get historyDeleteSingleConfirmMessage;
+
+  /// Label for delete button
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// Label for cancel button
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// Snackbar text on clear all scans
+  ///
+  /// In en, this message translates to:
+  /// **'All scans deleted successfully'**
+  String get allScansDeleted;
+
+  /// Snackbar text on single scan deleted
+  ///
+  /// In en, this message translates to:
+  /// **'Scan deleted successfully'**
+  String get scanDeleted;
+
+  /// Label for health status category
+  ///
+  /// In en, this message translates to:
+  /// **'Health Status'**
+  String get statusLabel;
+
+  /// Status text: healthy
+  ///
+  /// In en, this message translates to:
+  /// **'Healthy'**
+  String get statusHealthy;
+
+  /// Status text: early warning
+  ///
+  /// In en, this message translates to:
+  /// **'Early Disease / Warning'**
+  String get statusWarning;
+
+  /// Status text: disease detected
+  ///
+  /// In en, this message translates to:
+  /// **'Disease Detected'**
+  String get statusDisease;
+
+  /// Prompt template sent to Gemini for treatment of scan history items
+  ///
+  /// In en, this message translates to:
+  /// **'The detected plant is {plantName}.\nThe detected disease is {diseaseName}.\n\nPlease provide:\n* Disease description\n* Causes\n* Treatment methods\n* Prevention tips'**
+  String historyTreatmentPrompt(String plantName, String diseaseName);
 }
 
 class _AppLocalizationsDelegate

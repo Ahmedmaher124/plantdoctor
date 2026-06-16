@@ -296,4 +296,100 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get errorUnexpected => 'Something went wrong. Please try again.';
+
+  @override
+  String get homeNoPlantsFound => 'No plants found';
+
+  @override
+  String get homeTryAnotherSearch => 'Try searching for another plant';
+
+  @override
+  String get plantCareTipsTitle => 'Plant Care Tips';
+
+  @override
+  String get tipWateringTitle => 'Watering';
+
+  @override
+  String get tipWateringDesc =>
+      'Water plants moderately and avoid overwatering to prevent root rot.';
+
+  @override
+  String get tipSunlightTitle => 'Sunlight';
+
+  @override
+  String get tipSunlightDesc =>
+      'Ensure the plant receives enough sunlight according to its needs.';
+
+  @override
+  String get tipFertilizationTitle => 'Fertilization';
+
+  @override
+  String get tipFertilizationDesc =>
+      'Use appropriate fertilizer based on the plant type and growth stage.';
+
+  @override
+  String get tipPreventionTitle => 'Disease Prevention';
+
+  @override
+  String get tipPreventionDesc =>
+      'Remove infected leaves immediately to prevent disease spread.';
+
+  @override
+  String get tipInspectionTitle => 'Regular Inspection';
+
+  @override
+  String get tipInspectionDesc =>
+      'Check leaves and stems regularly to detect problems early.';
+
+  @override
+  String get historyTitle => 'Scan History';
+
+  @override
+  String get historyEmptyState => 'No scans yet';
+
+  @override
+  String get historySearchPlaceholder => 'Search by plant or disease...';
+
+  @override
+  String get historyDeleteAllConfirmTitle => 'Delete All Scans';
+
+  @override
+  String get historyDeleteAllConfirmMessage =>
+      'Are you sure you want to delete all scan history? This action cannot be undone.';
+
+  @override
+  String get historyDeleteSingleConfirmTitle => 'Delete Scan';
+
+  @override
+  String get historyDeleteSingleConfirmMessage =>
+      'Are you sure you want to delete this scan?';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get allScansDeleted => 'All scans deleted successfully';
+
+  @override
+  String get scanDeleted => 'Scan deleted successfully';
+
+  @override
+  String get statusLabel => 'Health Status';
+
+  @override
+  String get statusHealthy => 'Healthy';
+
+  @override
+  String get statusWarning => 'Early Disease / Warning';
+
+  @override
+  String get statusDisease => 'Disease Detected';
+
+  @override
+  String historyTreatmentPrompt(String plantName, String diseaseName) {
+    return 'The detected plant is $plantName.\nThe detected disease is $diseaseName.\n\nPlease provide:\n* Disease description\n* Causes\n* Treatment methods\n* Prevention tips';
+  }
 }

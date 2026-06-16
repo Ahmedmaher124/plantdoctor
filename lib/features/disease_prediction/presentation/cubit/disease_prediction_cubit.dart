@@ -8,15 +8,20 @@ import 'package:plantdoctor/features/disease_prediction/data/models/disease_pred
 import '../../../../core/network/api_exceptions.dart';
 import '../../data/repositories/disease_prediction_repository.dart';
 import 'disease_prediction_state.dart';
+import '../../../history/domain/usecases/save_scan_usecase.dart';
+import '../../../history/domain/entities/scan_history.dart';
 
 class DiseasePredictionCubit extends Cubit<DiseasePredictionState> {
   final DiseasePredictionRepository _repository;
   final ImagePicker _imagePicker;
+  final SaveScanUseCase _saveScanUseCase;
 
   DiseasePredictionCubit({
     required DiseasePredictionRepository repository,
+    required SaveScanUseCase saveScanUseCase,
     ImagePicker? imagePicker,
   })  : _repository = repository,
+        _saveScanUseCase = saveScanUseCase,
         _imagePicker = imagePicker ?? ImagePicker(),
         super(const DiseasePredictionInitial());
 
@@ -69,6 +74,10 @@ class DiseasePredictionCubit extends Cubit<DiseasePredictionState> {
 
     try {
       final response = await _repository.predictDisease(imageFile);
+      
+      // Auto-save scan history
+      await _saveScanToHistory(imageFile.path, response);
+      
       emit(DiseasePredictionSuccess(imageFile: imageFile, response: response));
       return response;
     } on NetworkException {
@@ -100,5 +109,76 @@ class DiseasePredictionCubit extends Cubit<DiseasePredictionState> {
     }
 
     return null;
+  }
+
+  Future<void> _saveScanToHistory(String imagePath, DiseasePredictionResponse response) async {
+    try {
+      final label = response.label ?? 'Plant___healthy';
+      
+      String plantName = 'Unknown';
+      String diseaseName = 'Unknown';
+      bool isHealthy = false;
+
+      if (label.contains('___')) {
+        final parts = label.split('___');
+        plantName = _formatName(parts[0]);
+        diseaseName = _formatName(parts[1]);
+      } else {
+        final lowerLabel = label.toLowerCase();
+        if (lowerLabel.contains('healthy')) {
+          isHealthy = true;
+          final words = label.split(RegExp(r'\s+'));
+          if (words.length > 1) {
+            plantName = _formatName(words[0]);
+            diseaseName = 'Healthy';
+          } else {
+            plantName = 'Plant';
+            diseaseName = 'Healthy';
+          }
+        } else {
+          final words = label.split(RegExp(r'\s+'));
+          if (words.length > 1) {
+            plantName = _formatName(words[0]);
+            diseaseName = _formatName(words.sublist(1).join(' '));
+          } else {
+            plantName = 'Plant';
+            diseaseName = _formatName(label);
+          }
+        }
+      }
+
+      if (diseaseName.toLowerCase() == 'healthy') {
+        isHealthy = true;
+      }
+
+      if (diseaseName.toLowerCase().contains('healthy')) {
+        isHealthy = true;
+      }
+
+      final confidence = response.confidence ?? 0.0;
+
+      final scan = ScanHistory(
+        plantName: plantName,
+        diseaseName: diseaseName,
+        imagePath: imagePath,
+        confidence: confidence,
+        scanDate: DateTime.now(),
+        isHealthy: isHealthy,
+      );
+
+      await _saveScanUseCase(scan);
+    } catch (_) {
+      // Fail silently to not crash prediction flow if saving fails
+    }
+  }
+
+  String _formatName(String text) {
+    return text
+        .replaceAll('_', ' ')
+        .replaceAll('-', ' ')
+        .split(' ')
+        .map((word) => word.isEmpty ? '' : '${word[0].toUpperCase()}${word.substring(1).toLowerCase()}')
+        .join(' ')
+        .trim();
   }
 }

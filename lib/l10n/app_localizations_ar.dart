@@ -297,4 +297,100 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get errorUnexpected => 'حدث خطأ غير متوقع. حاول مرة أخرى.';
+
+  @override
+  String get homeNoPlantsFound => 'لم يتم العثور على نباتات';
+
+  @override
+  String get homeTryAnotherSearch => 'حاول البحث عن اسم نبات آخر';
+
+  @override
+  String get plantCareTipsTitle => 'نصائح العناية بالنباتات';
+
+  @override
+  String get tipWateringTitle => 'الري';
+
+  @override
+  String get tipWateringDesc =>
+      'اسقِ النباتات باعتدال وتجنب الإفراط في الري لتفادي تعفن الجذور.';
+
+  @override
+  String get tipSunlightTitle => 'الإضاءة';
+
+  @override
+  String get tipSunlightDesc =>
+      'تأكد من حصول النبات على كمية كافية من ضوء الشمس يوميًا.';
+
+  @override
+  String get tipFertilizationTitle => 'التسميد';
+
+  @override
+  String get tipFertilizationDesc =>
+      'استخدم السماد المناسب حسب نوع النبات وفي المواعيد الموصى بها.';
+
+  @override
+  String get tipPreventionTitle => 'الوقاية من الأمراض';
+
+  @override
+  String get tipPreventionDesc =>
+      'قم بإزالة الأوراق المصابة فورًا لمنع انتشار المرض.';
+
+  @override
+  String get tipInspectionTitle => 'الفحص الدوري';
+
+  @override
+  String get tipInspectionDesc =>
+      'افحص الأوراق والسيقان بانتظام لاكتشاف المشكلات مبكرًا.';
+
+  @override
+  String get historyTitle => 'سجل الفحوصات';
+
+  @override
+  String get historyEmptyState => 'لا توجد فحوصات حتى الآن';
+
+  @override
+  String get historySearchPlaceholder => 'ابحث عن نبات أو مرض...';
+
+  @override
+  String get historyDeleteAllConfirmTitle => 'حذف كل السجل';
+
+  @override
+  String get historyDeleteAllConfirmMessage =>
+      'هل أنت متأكد من رغبتك في حذف سجل الفحوصات بالكامل؟ لا يمكن التراجع عن هذا الإجراء.';
+
+  @override
+  String get historyDeleteSingleConfirmTitle => 'حذف الفحص';
+
+  @override
+  String get historyDeleteSingleConfirmMessage =>
+      'هل أنت متأكد من رغبتك في حذف هذا الفحص؟';
+
+  @override
+  String get delete => 'حذف';
+
+  @override
+  String get cancel => 'إلغاء';
+
+  @override
+  String get allScansDeleted => 'تم حذف سجل الفحوصات بنجاح';
+
+  @override
+  String get scanDeleted => 'تم حذف الفحص بنجاح';
+
+  @override
+  String get statusLabel => 'حالة الصحة';
+
+  @override
+  String get statusHealthy => 'سليم';
+
+  @override
+  String get statusWarning => 'مرض مبكر / تحذير';
+
+  @override
+  String get statusDisease => 'تم اكتشاف مرض';
+
+  @override
+  String historyTreatmentPrompt(String plantName, String diseaseName) {
+    return 'النبات المكتشف هو: $plantName.\nالمرض المكتشف هو: $diseaseName.\n\nيرجى تقديم:\n* وصف المرض\n* الأسباب\n* طرق العلاج\n* نصائح للوقاية';
+  }
 }
